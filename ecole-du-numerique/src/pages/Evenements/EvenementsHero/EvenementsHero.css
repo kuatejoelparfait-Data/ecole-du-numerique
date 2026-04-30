@@ -1,0 +1,39 @@
+.evenements-hero {
+  background: var(--dark);
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.evenements-hero__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.evenements-hero__title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.evenements-hero__accent {
+  color: var(--purple-light);
+}
+
+.evenements-hero__subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+@media (min-width: 900px) {
+  .evenements-hero {
+    padding: 96px 24px;
+  }
+}

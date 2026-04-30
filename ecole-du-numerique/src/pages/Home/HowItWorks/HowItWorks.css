@@ -1,0 +1,94 @@
+.how {
+  padding: 64px 24px;
+  background: var(--dark);
+}
+
+.how__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* ── Header ─────────────────────────────── */
+.how__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.how__title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.how__title-accent {
+  color: var(--purple-light);
+}
+
+.how__subtitle {
+  font-size: 17px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── Steps (mobile: 1 colonne) ───────────── */
+.how__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.how__step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.how__step-number {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--purple);
+  line-height: 1;
+  opacity: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+
+.how__step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.how__step-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.how__step-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── Tablette ────────────────────────────── */
+@media (min-width: 560px) {
+  .how__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Desktop ─────────────────────────────── */
+@media (min-width: 900px) {
+  .how {
+    padding: 96px 24px;
+  }
+
+  .how__steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

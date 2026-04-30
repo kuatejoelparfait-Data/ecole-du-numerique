@@ -1,0 +1,231 @@
+.workshops-grid {
+  padding: 64px 24px;
+  background: var(--gray-light);
+}
+
+.workshops-grid__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.workshops-grid__empty {
+  text-align: center;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.workshops-grid__empty .material-symbols-rounded {
+  font-size: 48px;
+  color: var(--border);
+}
+
+/* ── Card ─────────────────────────────────── */
+.workshop-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.workshop-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.workshop-card--past {
+  opacity: 0.65;
+  filter: grayscale(0.4);
+  border-left: 4px solid var(--purple);
+}
+
+.workshop-card--past:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.workshop-card__past-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  background: var(--gray-light);
+  border: 1px solid var(--border);
+  padding: 4px 14px;
+  border-radius: 99px;
+  width: fit-content;
+}
+
+.workshop-card__aside {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.workshop-card__icon {
+  font-size: 20px;
+  color: var(--purple);
+  background: var(--purple-glow);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+}
+
+.workshop-card__date {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.workshop-card__heure {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.workshop-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.workshop-card__tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workshop-card__type {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple);
+  background: var(--purple-glow);
+  padding: 4px 12px;
+  border-radius: 99px;
+}
+
+.workshop-card__prix {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--gray-light);
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.workshop-card__title {
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.workshop-card__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.workshop-card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.workshop-card__infos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.workshop-card__info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.workshop-card__info .material-symbols-rounded {
+  font-size: 16px;
+}
+
+.workshop-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.workshop-card__cta {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+  border: 2px solid var(--purple);
+  padding: 10px 20px;
+  border-radius: 99px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.workshop-card__cta:hover {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.workshop-card__cta--primary {
+  background: var(--purple);
+  color: var(--white);
+  border-color: var(--purple);
+}
+
+.workshop-card__cta--primary:hover {
+  background: var(--purple-light);
+  border-color: var(--purple-light);
+  color: var(--white);
+}
+
+@media (min-width: 900px) {
+  .workshops-grid {
+    padding: 96px 24px;
+  }
+
+  .workshop-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .workshop-card__aside {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 120px;
+    padding-right: 24px;
+    border-right: 1px solid var(--border);
+    gap: 8px;
+  }
+
+  .workshop-card__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

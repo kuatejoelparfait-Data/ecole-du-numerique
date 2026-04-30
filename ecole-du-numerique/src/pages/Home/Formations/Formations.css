@@ -1,0 +1,135 @@
+.formations {
+  padding: 64px 24px;
+  background: var(--gray-light);
+}
+
+.formations__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── Header ─────────────────────────────── */
+.formations__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formations__title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.formations__title-accent {
+  color: var(--purple);
+}
+
+.formations__subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+/* ── Grid (mobile: 1 colonne) ────────────── */
+.formations__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ── Card ───────────────────────────────── */
+.formations__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.formations__card:hover {
+  border-color: var(--purple);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.formations__card-icon {
+  font-size: 32px;
+  line-height: 1;
+  color: var(--purple);
+  align-self: center;
+  background: var(--purple-glow);
+  padding: 14px;
+  border-radius: var(--radius);
+}
+
+.formations__card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.formations__card-count {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.formations__card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  margin-top: auto;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.formations__card:hover .formations__card-link {
+  color: var(--purple-light);
+}
+
+/* ── CTA ────────────────────────────────── */
+.formations__cta-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.formations__cta {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 99px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.formations__cta:hover {
+  background: var(--purple);
+  color: var(--white);
+}
+
+/* ── Tablette ────────────────────────────── */
+@media (min-width: 560px) {
+  .formations__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Desktop ─────────────────────────────── */
+@media (min-width: 900px) {
+  .formations {
+    padding: 96px 24px;
+  }
+
+  .formations__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

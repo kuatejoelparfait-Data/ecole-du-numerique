@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ecoledunumerique.be/sitemap.xml

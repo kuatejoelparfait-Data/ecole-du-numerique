@@ -1,0 +1,227 @@
+.fd-notfound {
+  padding: 96px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ── Hero ───────────────────────────────── */
+.fd-hero {
+  background: var(--dark);
+  padding: 64px 24px;
+}
+
+.fd-hero__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fd-hero__back {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  width: fit-content;
+  transition: color 0.2s;
+}
+
+.fd-hero__back:hover {
+  color: var(--purple-light);
+}
+
+.fd-hero__category {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple-light);
+}
+
+.fd-hero__title {
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.fd-hero__level {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--purple-light);
+  background: var(--purple-glow);
+  border: 1px solid rgba(123,47,255,0.3);
+  padding: 5px 14px;
+  border-radius: 99px;
+  width: fit-content;
+}
+
+/* ── Content ─────────────────────────────── */
+.fd-content {
+  padding: 64px 24px;
+  background: var(--gray-light);
+}
+
+.fd-content__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.fd-content__main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.fd-content__block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fd-content__block-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.fd-content__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.fd-content__outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fd-content__outcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.fd-content__outcome-icon {
+  font-size: 20px;
+  color: var(--purple);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Aside ──────────────────────────────── */
+.fd-content__aside {
+  position: static;
+}
+
+.fd-content__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fd-content__card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.fd-content__card-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: -4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fd-content__card-value:last-of-type {
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+
+.fd-content__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 99px;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.fd-content__cta:hover {
+  background: var(--purple-light);
+  transform: translateY(-1px);
+}
+
+.fd-content__cta-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--purple);
+  color: var(--purple);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 99px;
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fd-content__cta-secondary:hover {
+  background: var(--purple);
+  color: var(--white);
+}
+
+/* ── Desktop ─────────────────────────────── */
+@media (min-width: 900px) {
+  .fd-hero {
+    padding: 96px 24px;
+  }
+
+  .fd-content {
+    padding: 96px 24px;
+  }
+
+  .fd-content__container {
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+  }
+
+  .fd-content__aside {
+    position: sticky;
+    top: 96px;
+  }
+}

@@ -1,0 +1,73 @@
+.about-mission {
+  padding: 64px 24px;
+  background: var(--white);
+}
+
+.about-mission__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-mission__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-mission__title {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.about-mission__text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* ── Stats ──────────────────────────────── */
+.about-mission__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.about-mission__stat {
+  background: var(--gray-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-mission__stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--purple);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.about-mission__stat-label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+@media (min-width: 900px) {
+  .about-mission {
+    padding: 96px 24px;
+  }
+
+  .about-mission__container {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+  }
+}

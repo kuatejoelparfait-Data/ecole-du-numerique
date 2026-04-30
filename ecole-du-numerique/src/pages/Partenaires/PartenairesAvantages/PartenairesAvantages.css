@@ -1,0 +1,88 @@
+.partenaires-avantages {
+  padding: 64px 24px;
+  background: var(--gray-light);
+}
+
+.partenaires-avantages__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.partenaires-avantages__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.partenaires-avantages__title {
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.partenaires-avantages__accent {
+  color: var(--purple);
+}
+
+.partenaires-avantages__subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+.partenaires-avantages__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.partenaires-avantages__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.partenaires-avantages__icon {
+  font-size: 32px;
+  color: var(--purple);
+  background: var(--purple-glow);
+  padding: 12px;
+  border-radius: var(--radius);
+  width: fit-content;
+}
+
+.partenaires-avantages__card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.partenaires-avantages__card-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (min-width: 640px) {
+  .partenaires-avantages__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .partenaires-avantages {
+    padding: 96px 24px;
+  }
+
+  .partenaires-avantages__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

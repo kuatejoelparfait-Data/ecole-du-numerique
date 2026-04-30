@@ -1,0 +1,66 @@
+.contact-brands {
+  padding: 64px 24px;
+  background: var(--white);
+  text-align: center;
+}
+
+.contact-brands__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-brands__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.contact-brands__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.contact-brands__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-brands__logo-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--border);
+}
+
+.contact-brands__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.contact-brands__logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.contact-brands__logo-img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (min-width: 900px) {
+  .contact-brands {
+    padding: 80px 24px;
+  }
+}
