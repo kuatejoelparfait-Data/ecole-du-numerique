@@ -3,8 +3,8 @@ import './AboutTeam.css'
 const members = [
   { name: 'Joel Kuate Parfait', role: 'Fondateur & Directeur', initials: 'JK' },
   { name: 'Edouard Renard', role: 'Business Partner', initials: 'ER' },
+  { name: 'Meriton Askaj', role: 'Stagiaire Front-end Développeur', initials: 'MA' },
   { name: 'Membre de l\'équipe', role: 'Formateur IA & Data', initials: '?' },
-  { name: 'Membre de l\'équipe', role: 'Formateur Dev Web', initials: '?' },
 ]
 
 export default function AboutTeam() {
