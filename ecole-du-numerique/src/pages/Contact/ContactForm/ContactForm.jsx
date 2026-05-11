@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import './ContactForm.css'
 
-const FORMSPREE_ID = 'meevwvjj'
+const FORMSPREE_URLS = [
+  'https://formspree.io/f/xaqvbeky',
+  'https://formspree.io/f/mqenlqaz',
+]
 
 export default function ContactForm() {
   const [status, setStatus] = useState('idle')
@@ -15,12 +18,14 @@ export default function ContactForm() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (res.ok) {
+      const results = await Promise.all(
+        FORMSPREE_URLS.map(url => fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(form),
+        }))
+      )
+      if (results.every(r => r.ok)) {
         setStatus('success')
         setForm({ name: '', email: '', subject: '', message: '' })
       } else {

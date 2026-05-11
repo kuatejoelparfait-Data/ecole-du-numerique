@@ -7,12 +7,12 @@ export default function PartenairesForm() {
   async function handleSubmit(e) {
     e.preventDefault()
     setStatus('sending')
-    const res = await fetch('https://formspree.io/f/meevwvjj', {
-      method: 'POST',
-      headers: { Accept: 'application/json' },
-      body: new FormData(e.target),
-    })
-    setStatus(res.ok ? 'success' : 'error')
+    const data = new FormData(e.target)
+    const results = await Promise.all([
+      fetch('https://formspree.io/f/xaqvbeky', { method: 'POST', headers: { Accept: 'application/json' }, body: data }),
+      fetch('https://formspree.io/f/mqenlqaz', { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(e.target) }),
+    ])
+    setStatus(results.every(r => r.ok) ? 'success' : 'error')
   }
 
   return (
