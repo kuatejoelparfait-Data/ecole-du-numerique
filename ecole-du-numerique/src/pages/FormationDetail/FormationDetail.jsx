@@ -2,6 +2,14 @@ import { useParams, Link } from 'react-router-dom'
 import { getFormationBySlug } from '../../data/formations'
 import './FormationDetail.css'
 
+const categoryImages = {
+  'Intelligence Artificielle & Data':    '/assets/images/formations-particuliers/ia-data/hero-dc-studio.webp',
+  'Développement Web & No-Code':         '/assets/images/formations-particuliers/dev-no-code/laptop-freepik.webp',
+  'Marketing Digital & SEO':             '/assets/images/formations-particuliers/marketing-digital-seo/hero-rawpixel.webp',
+  'Réseaux Sociaux & Communication':     '/assets/images/formations-particuliers/reseau-communication/hero-freepik-1.webp',
+  'Design & Expérience Utilisateur':     '/assets/images/formations-particuliers/design-ux/wireframe-freepik.webp',
+}
+
 export default function FormationDetail() {
   const { slug } = useParams()
   const formation = getFormationBySlug(slug)
@@ -19,12 +27,24 @@ export default function FormationDetail() {
     <>
       <section className="fd-hero">
         <div className="fd-hero__container">
-          <Link to="/formations-particuliers" className="fd-hero__back">
-            ← Retour aux formations
-          </Link>
-          <p className="fd-hero__category">{formation.category}</p>
-          <h1 className="fd-hero__title">{formation.title}</h1>
-          <span className="fd-hero__level">{formation.level}</span>
+          <div className="fd-hero__content">
+            <Link to="/formations-particuliers" className="fd-hero__back">
+              ← Retour aux formations
+            </Link>
+            <p className="fd-hero__category">{formation.category}</p>
+            <h1 className="fd-hero__title">{formation.title}</h1>
+            <span className="fd-hero__level">{formation.level}</span>
+          </div>
+          {categoryImages[formation.category] && (
+            <div className="fd-hero__img-wrapper">
+              <img
+                src={categoryImages[formation.category]}
+                alt={formation.category}
+                className="fd-hero__img"
+                fetchpriority="high"
+              />
+            </div>
+          )}
         </div>
       </section>
 

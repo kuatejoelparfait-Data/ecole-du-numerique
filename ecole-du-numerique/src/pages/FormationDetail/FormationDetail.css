@@ -18,7 +18,43 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 40px;
+}
+
+.fd-hero__content {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+}
+
+.fd-hero__img-wrapper {
+  width: 100%;
+  height: 260px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.fd-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .fd-hero__container {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .fd-hero__content {
+    flex: 1;
+  }
+
+  .fd-hero__img-wrapper {
+    flex: 1;
+    height: 320px;
+  }
 }
 
 .fd-hero__back {

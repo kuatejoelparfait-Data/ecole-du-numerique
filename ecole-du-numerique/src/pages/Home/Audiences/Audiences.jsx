@@ -2,7 +2,7 @@ import './Audiences.css'
 
 const audiences = [
   {
-    image:   '/assets/images/formation-pour-particulier.webp',
+    image:   '/assets/images/formations-particuliers/hero-zinkevych.webp',
     tag:     'Particuliers',
     title:   'Vous formez, à votre rythme',
     desc:    "Des formations simples, concrètes et motivantes pour découvrir l'IA, le digital et le no-code. Que vous soyez étudiant, indépendant ou en reconversion, vous apprendrez à utiliser les bons outils, développer de nouvelles compétences et gagner en autonomie dans votre vie professionnelle.",
@@ -10,7 +10,7 @@ const audiences = [
     href:    '/formations-particuliers',
   },
   {
-    image:   '/assets/images/formation-pour-entreprise.webp',
+    image:   '/assets/images/formations-entreprises/hero-pexels-1.webp',
     tag:     'Entreprises',
     title:   'Boostez votre équipe avec l\'IA',
     desc:    "Des formations pratiques et stratégiques pour intégrer l'IA, la data et les outils digitaux au cœur de vos activités. Conçues pour les équipes et décideurs, elles visent à améliorer la performance, automatiser les processus et renforcer la maîtrise des nouvelles technologies.",

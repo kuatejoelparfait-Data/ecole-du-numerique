@@ -4,13 +4,14 @@ import { formationsEntreprises } from '../../../data/formationsEntreprises'
 import './FECategories.css'
 
 const categoryMeta = [
-  { id: 'Intelligence Artificielle & Data',  label: 'Intelligence Artificielle & Data',  icon: 'smart_toy'   },
-  { id: 'Développement Web & No-Code',       label: 'Développement Web & No-Code',       icon: 'code'        },
-  { id: 'Cybersécurité & Protection',        label: 'Cybersécurité & Protection',        icon: 'shield'      },
-  { id: 'Gestion de Projet & Méthodologies', label: 'Gestion de Projet & Méthodologies', icon: 'task_alt'    },
+  { id: 'Intelligence Artificielle & Data',  label: 'Intelligence Artificielle & Data',  icon: 'smart_toy', image: '/assets/images/formations-entreprises/ia-data/hero-ia.webp'                          },
+  { id: 'Développement Web & No-Code',       label: 'Développement Web & No-Code',       icon: 'code',      image: '/assets/images/formations-entreprises/dev-no-code/laptop-freepik.webp'             },
+  { id: 'Cybersécurité & Protection',        label: 'Cybersécurité & Protection',        icon: 'shield',    image: '/assets/images/formations-entreprises/cybersecurite/hero-pexels.webp'              },
+  { id: 'Gestion de Projet & Méthodologies', label: 'Gestion de Projet & Méthodologies', icon: 'task_alt',  image: '/assets/images/formations-entreprises/gestion-projet-methode/hero-pexels.webp'     },
 ]
 
-const categoryIcon = Object.fromEntries(categoryMeta.map(c => [c.id, c.icon]))
+const categoryIcon  = Object.fromEntries(categoryMeta.map(c => [c.id, c.icon]))
+const categoryImage = Object.fromEntries(categoryMeta.map(c => [c.id, c.image]))
 
 export default function FECategories() {
   const [active, setActive] = useState(categoryMeta[0].id)
@@ -36,6 +37,7 @@ export default function FECategories() {
               className={`fe-categories__tab${active === cat.id ? ' fe-categories__tab--active' : ''}`}
               onClick={() => setActive(cat.id)}
             >
+              <img src={cat.image} alt={cat.label} className="fe-categories__tab-img" loading="lazy" />
               <span className="material-symbols-rounded fe-categories__tab-icon">{cat.icon}</span>
               <span>{cat.label}</span>
             </button>
