@@ -11,6 +11,8 @@ const categoryMeta = [
   { id: 'Design & Expérience Utilisateur',     label: 'Design & Expérience Utilisateur',     icon: 'palette'     },
 ]
 
+const categoryIcon = Object.fromEntries(categoryMeta.map(c => [c.id, c.icon]))
+
 export default function FPCategories() {
   const [active, setActive] = useState(categoryMeta[0].id)
 
@@ -45,7 +47,7 @@ export default function FPCategories() {
         <div className="fp-categories__grid">
           {current.map(formation => (
             <div key={formation.slug} className="fp-categories__card">
-              <span className="material-symbols-rounded fp-categories__card-icon">school</span>
+              <span className="material-symbols-rounded fp-categories__card-icon">{categoryIcon[formation.category]}</span>
               <div className="fp-categories__card-body">
                 <Link to={`/formations/${formation.slug}`} className="fp-categories__card-title">
                   {formation.title}

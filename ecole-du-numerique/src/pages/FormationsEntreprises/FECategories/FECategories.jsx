@@ -10,6 +10,8 @@ const categoryMeta = [
   { id: 'Gestion de Projet & Méthodologies', label: 'Gestion de Projet & Méthodologies', icon: 'task_alt'    },
 ]
 
+const categoryIcon = Object.fromEntries(categoryMeta.map(c => [c.id, c.icon]))
+
 export default function FECategories() {
   const [active, setActive] = useState(categoryMeta[0].id)
   const current = formationsEntreprises.filter(f => f.category === active)
@@ -43,12 +45,15 @@ export default function FECategories() {
         <div className="fe-categories__grid">
           {current.map(formation => (
             <div key={formation.slug} className="fe-categories__card">
-              <span className="material-symbols-rounded fe-categories__card-icon">school</span>
+              <span className="material-symbols-rounded fe-categories__card-icon">{categoryIcon[formation.category]}</span>
               <div className="fe-categories__card-body">
                 <p className="fe-categories__card-title">{formation.title}</p>
                 <p className="fe-categories__card-desc">{formation.desc}</p>
               </div>
               <div className="fe-categories__card-footer">
+                <Link to="/contact" className="fe-categories__card-cta fe-categories__card-cta--outline">
+                  En savoir plus
+                </Link>
                 <Link to="/contact" className="fe-categories__card-cta">
                   Demander un devis
                 </Link>
