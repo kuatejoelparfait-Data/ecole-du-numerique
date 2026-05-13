@@ -1,6 +1,7 @@
 export const evenements = [
   {
     slug: 'masterclass-ia-sport-nov-2025',
+    image: '/assets/images/evenements/articles/masterclass-ia-sport-ia.webp',
     title: "Masterclass : L'IA qui révolutionne les événements sportifs",
     date: '11 novembre 2025',
     dateISO: '2025-11-11',
@@ -22,6 +23,7 @@ export const evenements = [
   },
   {
     slug: 'masterclass-marketing-digital-2026',
+    image: '/assets/images/evenements/articles/masterclass-marketing-ia.webp',
     title: 'Masterclass : Stratégie Marketing Digital en 2026',
     date: '15 octobre 2026',
     dateISO: '2026-10-15',

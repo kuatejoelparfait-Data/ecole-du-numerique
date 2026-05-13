@@ -19,15 +19,29 @@ export default function EvenementDetail() {
     <>
       <section className="ed-hero">
         <div className="ed-hero__container">
-          <Link to="/evenements" className="ed-hero__back">← Retour aux événements</Link>
-          <span className="ed-hero__type">{evt.type}</span>
-          <h1 className="ed-hero__title">{evt.title}</h1>
-          <div className="ed-hero__meta">
-            <span className="material-symbols-rounded">event</span>
-            {evt.date} — {evt.heure}
-            <span className="material-symbols-rounded">location_on</span>
-            {evt.lieu}
+          <div className="ed-hero__content">
+            <Link to="/evenements" className="ed-hero__back">← Retour aux événements</Link>
+            <span className="ed-hero__type">{evt.type}</span>
+            <h1 className="ed-hero__title">{evt.title}</h1>
+            <div className="ed-hero__meta">
+              <span className="material-symbols-rounded">event</span>
+              {evt.date} — {evt.heure}
+              <span className="material-symbols-rounded">location_on</span>
+              {evt.lieu}
+            </div>
           </div>
+          {evt.image && (
+            <div className="ed-hero__img-wrapper">
+              <img
+                src={evt.image}
+                alt={evt.title}
+                className="ed-hero__img"
+                width="600"
+                height="440"
+                fetchpriority="high"
+              />
+            </div>
+          )}
         </div>
       </section>
 

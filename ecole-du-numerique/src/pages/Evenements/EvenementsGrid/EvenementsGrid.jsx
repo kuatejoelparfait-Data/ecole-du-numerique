@@ -26,6 +26,12 @@ export default function EvenementsGrid() {
           const isPast = new Date(evt.dateISO) < today
           return (
             <div key={evt.slug} className={`evenement-card${isPast ? ' evenement-card--past' : ''}`} style={isPast ? { pointerEvents: 'none' } : {}}>
+              {evt.image && (
+                <div className="evenement-card__img-wrapper">
+                  <img src={evt.image} alt={evt.title} className="evenement-card__img" loading="lazy" />
+                </div>
+              )}
+              <div className="evenement-card__inner">
               {isPast && <span className="evenement-card__past-badge">Événement passé</span>}
               <div className="evenement-card__aside">
                 <span className="material-symbols-rounded evenement-card__icon">event</span>
@@ -52,6 +58,7 @@ export default function EvenementsGrid() {
                     )}
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           )
