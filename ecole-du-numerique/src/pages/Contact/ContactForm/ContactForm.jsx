@@ -92,6 +92,8 @@ export default function ContactForm() {
                   <option value="">Choisissez un sujet</option>
                   <option value="Formation particulier">Formation particulier</option>
                   <option value="Formation entreprise">Formation entreprise</option>
+                  <option value="Événement">Événement</option>
+                  <option value="Workshop">Workshop</option>
                   <option value="Partenariat">Partenariat</option>
                   <option value="Pricing">Pricing</option>
                   <option value="Autre">Autre</option>

@@ -49,9 +49,16 @@
 }
 
 .partenaires-actuels__name {
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--text-muted);
-  font-weight: 500;
+}
+
+.partenaires-actuels__logo-placeholder {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--border);
 }
 
 @media (min-width: 900px) {

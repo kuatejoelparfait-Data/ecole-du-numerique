@@ -2,6 +2,9 @@ import './PartenairesActuels.css'
 
 const partenaires = [
   { name: 'Région de Bruxelles-Capitale', logo: '/assets/images/logo-bruxelles-capital.webp' },
+  { name: 'Partenaire 2' },
+  { name: 'Partenaire 3' },
+  { name: 'Partenaire 4' },
 ]
 
 export default function PartenairesActuels() {
@@ -12,8 +15,17 @@ export default function PartenairesActuels() {
         <div className="partenaires-actuels__grid">
           {partenaires.map(p => (
             <div key={p.name} className="partenaires-actuels__item">
-              <img src={p.logo} alt={p.name} className="partenaires-actuels__logo" />
-              <p className="partenaires-actuels__name">{p.name}</p>
+              {p.logo ? (
+                <>
+                  <img src={p.logo} alt={p.name} className="partenaires-actuels__logo" />
+                  <p className="partenaires-actuels__name">{p.name}</p>
+                </>
+              ) : (
+                <>
+                  <div className="partenaires-actuels__logo-placeholder" />
+                  <p className="partenaires-actuels__name">{p.name}</p>
+                </>
+              )}
             </div>
           ))}
         </div>
