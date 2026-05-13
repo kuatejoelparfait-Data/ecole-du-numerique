@@ -26,6 +26,12 @@ export default function WorkshopsGrid() {
           const isPast = new Date(ws.dateISO) < today
           return (
             <div key={ws.slug} className={`workshop-card${isPast ? ' workshop-card--past' : ''}`} style={isPast ? { pointerEvents: 'none' } : {}}>
+              {ws.image && (
+                <div className="workshop-card__img-wrapper">
+                  <img src={ws.image} alt={ws.title} className="workshop-card__img" loading="lazy" />
+                </div>
+              )}
+              <div className="workshop-card__inner">
               {isPast && <span className="workshop-card__past-badge">Workshop passé</span>}
               <div className="workshop-card__aside">
                 <span className="material-symbols-rounded workshop-card__icon">build</span>
@@ -61,6 +67,7 @@ export default function WorkshopsGrid() {
                     )}
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           )

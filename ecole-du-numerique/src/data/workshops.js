@@ -1,6 +1,7 @@
 export const workshops = [
   {
     slug: 'workshop-chatgpt-productivite',
+    image: '/assets/images/workshops/ateliers/chatgpt-sanketgraphy-pexels.webp',
     title: 'ChatGPT & Productivité : automatisez vos tâches quotidiennes',
     date: '15 mai 2026',
     dateISO: '2026-05-15',
@@ -20,6 +21,7 @@ export const workshops = [
   },
   {
     slug: 'workshop-canva-design',
+    image: '/assets/images/workshops/ateliers/canva-mutecevvil-pexels.webp',
     title: 'Canva Pro : créez des visuels professionnels sans être designer',
     date: '20 juin 2026',
     dateISO: '2026-06-20',

@@ -19,17 +19,24 @@ export default function WorkshopDetail() {
     <>
       <section className="wd-hero">
         <div className="wd-hero__container">
-          <Link to="/workshops" className="wd-hero__back">← Retour aux workshops</Link>
-          <span className="wd-hero__type">Workshop</span>
-          <h1 className="wd-hero__title">{ws.title}</h1>
-          <div className="wd-hero__meta">
-            <span className="material-symbols-rounded">event</span>
-            {ws.date} — {ws.heure}
-            <span className="material-symbols-rounded">location_on</span>
-            {ws.lieu}
-            <span className="material-symbols-rounded">group</span>
-            {ws.places}
+          <div className="wd-hero__content">
+            <Link to="/workshops" className="wd-hero__back">← Retour aux workshops</Link>
+            <span className="wd-hero__type">Workshop</span>
+            <h1 className="wd-hero__title">{ws.title}</h1>
+            <div className="wd-hero__meta">
+              <span className="material-symbols-rounded">event</span>
+              {ws.date} — {ws.heure}
+              <span className="material-symbols-rounded">location_on</span>
+              {ws.lieu}
+              <span className="material-symbols-rounded">group</span>
+              {ws.places}
+            </div>
           </div>
+          {ws.image && (
+            <div className="wd-hero__img-wrapper">
+              <img src={ws.image} alt={ws.title} className="wd-hero__img" width="560" height="320" fetchpriority="high" />
+            </div>
+          )}
         </div>
       </section>
 
