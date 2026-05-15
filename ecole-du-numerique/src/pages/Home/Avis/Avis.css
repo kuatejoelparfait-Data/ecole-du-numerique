@@ -1,0 +1,101 @@
+.avis {
+  padding: 64px 24px;
+  background: linear-gradient(135deg, #3b1fa3 0%, #7b2fff 100%);
+}
+
+.avis__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.avis__title {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--white);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.avis__accent {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.avis__subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.avis__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ── Card ─────────────────────────────────── */
+.avis-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.avis-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.avis-card__thumb {
+  width: 26px;
+  height: 26px;
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+.avis-card__texte {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text);
+  flex: 1;
+}
+
+.avis-card__footer {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.avis-card__nom {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.avis-card__role {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@media (min-width: 700px) {
+  .avis__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .avis {
+    padding: 96px 24px;
+  }
+}
