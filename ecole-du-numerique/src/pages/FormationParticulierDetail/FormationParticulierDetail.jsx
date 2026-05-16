@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { getFormationBySlug } from '../../data/formations'
-import './FormationDetail.css'
+import './FormationParticulierDetail.css'
 
 const categoryImages = {
   'Intelligence Artificielle & Data':    '/assets/images/formations-particuliers/ia-data/hero-dc-studio.webp',
@@ -10,7 +10,7 @@ const categoryImages = {
   'Design & Expérience Utilisateur':     '/assets/images/formations-particuliers/design-ux/wireframe-freepik.webp',
 }
 
-export default function FormationDetail() {
+export default function FormationParticulierDetail() {
   const { slug } = useParams()
   const formation = getFormationBySlug(slug)
 

@@ -53,7 +53,7 @@ export default function FECategories() {
                 <p className="fe-categories__card-desc">{formation.desc}</p>
               </div>
               <div className="fe-categories__card-footer">
-                <Link to="/contact" className="fe-categories__card-cta fe-categories__card-cta--outline">
+                <Link to={`/formations-entreprises/${formation.slug}`} className="fe-categories__card-cta fe-categories__card-cta--outline">
                   En savoir plus
                 </Link>
                 <Link to="/contact" className="fe-categories__card-cta">
