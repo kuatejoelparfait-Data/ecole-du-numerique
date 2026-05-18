@@ -2,7 +2,7 @@ import './AboutMission.css'
 
 const stats = [
   { value: '2024', label: 'Année de fondation' },
-  { value: '500+', label: 'Apprenants formés' },
+  { value: '600+', label: 'Apprenants formés' },
   { value: '10+', label: 'Formations disponibles' },
   { value: '95%', label: 'Taux de satisfaction' },
 ]

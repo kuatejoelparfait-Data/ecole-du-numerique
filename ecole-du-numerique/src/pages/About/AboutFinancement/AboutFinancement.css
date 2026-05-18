@@ -1,0 +1,115 @@
+.about-financement {
+  padding: 64px 24px;
+  background: var(--white);
+}
+
+.about-financement__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── Content ─────────────────────────────── */
+.about-financement__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
+}
+
+.about-financement__title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.about-financement__accent {
+  color: var(--purple);
+}
+
+.about-financement__text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.about-financement__cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--purple);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 99px;
+  width: fit-content;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.about-financement__cta:hover {
+  background: var(--purple-light);
+  transform: translateY(-1px);
+}
+
+/* ── List ────────────────────────────────── */
+.about-financement__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-financement__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--gray-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.about-financement__item-icon {
+  font-size: 26px;
+  color: var(--purple);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.about-financement__item-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.about-financement__item-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Desktop ─────────────────────────────── */
+@media (min-width: 900px) {
+  .about-financement {
+    padding: 128px 24px;
+  }
+
+  .about-financement__container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .about-financement__content {
+    flex: 1;
+    position: sticky;
+    top: 96px;
+  }
+
+  .about-financement__list {
+    flex: 1;
+  }
+}

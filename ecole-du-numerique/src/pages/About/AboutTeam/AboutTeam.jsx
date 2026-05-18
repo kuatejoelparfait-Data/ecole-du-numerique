@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom'
 import './AboutTeam.css'
 
 const members = [
   { name: 'Joel Kuate Parfait', role: 'Fondateur & Directeur', initials: 'JK' },
   { name: 'Edouard Renard', role: 'Business Partner', initials: 'ER' },
   { name: 'Meriton Askaj', role: 'Stagiaire Front-end Développeur', initials: 'MA' },
-  { name: 'Membre de l\'équipe', role: 'Formateur IA & Data', initials: '?' },
 ]
 
 export default function AboutTeam() {
@@ -30,6 +30,15 @@ export default function AboutTeam() {
               </div>
             </div>
           ))}
+          <Link to="/contact" className="about-team__card about-team__card--join">
+            <div className="about-team__join-icon">
+              <span className="material-symbols-rounded">add</span>
+            </div>
+            <div className="about-team__info">
+              <p className="about-team__name">Rejoignez-nous</p>
+              <p className="about-team__role">Vous faites la différence ?</p>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

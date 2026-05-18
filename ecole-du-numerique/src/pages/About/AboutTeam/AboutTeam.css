@@ -91,6 +91,49 @@
   color: var(--text-muted);
 }
 
+/* ── Join placeholder ────────────────────── */
+.about-team__card--join {
+  border: 2px dashed var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.about-team__card--join:hover {
+  border-color: var(--purple);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.about-team__card--join .about-team__name {
+  color: var(--purple);
+}
+
+.about-team__join-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.about-team__card--join:hover .about-team__join-icon {
+  border-color: var(--purple);
+}
+
+.about-team__join-icon .material-symbols-rounded {
+  font-size: 28px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.about-team__card--join:hover .about-team__join-icon .material-symbols-rounded {
+  color: var(--purple);
+}
+
 @media (min-width: 560px) {
   .about-team__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -99,7 +142,7 @@
 
 @media (min-width: 900px) {
   .about-team {
-    padding: 96px 24px;
+    padding: 128px 24px;
   }
 
   .about-team__grid {
