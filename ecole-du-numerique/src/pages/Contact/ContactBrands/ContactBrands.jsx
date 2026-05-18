@@ -1,35 +1,38 @@
 import './ContactBrands.css'
 
-const brands = [
+const partners = [
   { name: 'Région de Bruxelles-Capitale', logo: '/assets/images/logo-bruxelles-capital.webp' },
-  { name: 'Partenaire 2' },
-  { name: 'Partenaire 3' },
-  { name: 'Partenaire 4' },
-  { name: 'Partenaire 5' },
+  null,
+  null,
+  null,
 ]
 
 export default function ContactBrands() {
   return (
     <section className="contact-brands">
       <div className="contact-brands__container">
-        <p className="contact-brands__title">Ils nous font confiance.</p>
-        <div className="contact-brands__grid">
-          {brands.map(brand => (
-            <div key={brand.name} className="contact-brands__item">
-              {brand.logo ? (
-                <>
-                  <img src={brand.logo} alt={brand.name} className="contact-brands__logo-img" />
-                  <span className="contact-brands__name">{brand.name}</span>
-                </>
-              ) : (
-                <>
-                  <div className="contact-brands__logo-placeholder" />
-                  <span className="contact-brands__name">{brand.name}</span>
-                </>
-              )}
-            </div>
-          ))}
+
+        <div className="contact-brands__header">
+          <h2 className="contact-brands__title">Nos <span className="contact-brands__accent">partenaires</span></h2>
+          <p className="contact-brands__subtitle">Ils soutiennent notre mission de formation numérique en Belgique.</p>
         </div>
+
+        <div className="contact-brands__grid">
+          {partners.map((partner, i) =>
+            partner ? (
+              <div key={i} className="contact-brands__card">
+                <img src={partner.logo} alt={partner.name} className="contact-brands__logo" />
+                <p className="contact-brands__name">{partner.name}</p>
+              </div>
+            ) : (
+              <div key={i} className="contact-brands__card contact-brands__card--empty">
+                <span className="material-symbols-rounded contact-brands__add">add_business</span>
+                <p className="contact-brands__name contact-brands__name--muted">Partenaire à venir</p>
+              </div>
+            )
+          )}
+        </div>
+
       </div>
     </section>
   )

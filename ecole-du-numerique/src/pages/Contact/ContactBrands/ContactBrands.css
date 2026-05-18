@@ -1,7 +1,6 @@
 .contact-brands {
   padding: 64px 24px;
   background: var(--white);
-  text-align: center;
 }
 
 .contact-brands__container {
@@ -9,58 +8,105 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 48px;
+}
+
+/* ── Header ─────────────────────────────── */
+.contact-brands__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .contact-brands__title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
   color: var(--text);
+  letter-spacing: -0.02em;
 }
 
-.contact-brands__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
+.contact-brands__accent {
+  color: var(--purple);
 }
 
-.contact-brands__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.contact-brands__logo-placeholder {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  background: var(--border);
-}
-
-.contact-brands__name {
+.contact-brands__subtitle {
   font-size: 16px;
-  font-weight: 700;
   color: var(--text-muted);
 }
 
-.contact-brands__logo-img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.7;
-  transition: filter 0.2s, opacity 0.2s;
+/* ── Grid ────────────────────────────────── */
+.contact-brands__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
-.contact-brands__logo-img:hover {
-  filter: grayscale(0);
-  opacity: 1;
+/* ── Card ────────────────────────────────── */
+.contact-brands__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.contact-brands__card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.contact-brands__card--empty {
+  border: 1px dashed var(--border);
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-brands__card--empty:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.contact-brands__logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.contact-brands__add {
+  font-size: 28px;
+  color: var(--text-muted);
+  opacity: 0.3;
+}
+
+.contact-brands__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.contact-brands__name--muted {
+  color: var(--border);
+}
+
+/* ── Desktop ─────────────────────────────── */
+@media (min-width: 560px) {
+  .contact-brands__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 900px) {
   .contact-brands {
-    padding: 80px 24px;
+    padding: 128px 24px;
+  }
+
+  .contact-brands__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
