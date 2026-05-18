@@ -7,6 +7,7 @@ import FAQ         from './FAQ/FAQ'
 import BlogPreview from './BlogPreview/BlogPreview'
 import Wave        from '../../components/Dividers/Wave'
 import Arc         from '../../components/Dividers/Arc'
+import Financement from './Financement/Financement'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Arc top="#0D0B1A" bottom="#FFFFFF" />
       <Audiences />
       <Formations />
+      <Financement />
       <HowItWorks />
 
       <FAQ />
