@@ -117,27 +117,31 @@
   color: var(--purple-light);
 }
 
-/* ── CTA ────────────────────────────────── */
-.formations__cta-wrapper {
+/* ── Toggle ─────────────────────────────── */
+.formations__toggle {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  background: var(--border);
+  border-radius: 99px;
+  padding: 4px;
+  gap: 0;
+  width: fit-content;
+  margin: 8px auto 0;
 }
 
-.formations__cta {
-  display: inline-flex;
-  align-items: center;
-  border: 2px solid var(--purple);
-  color: var(--purple);
-  font-size: 15px;
+.formations__toggle-btn {
+  font-size: 14px;
   font-weight: 600;
-  padding: 12px 32px;
+  padding: 8px 24px;
   border-radius: 99px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
 
-.formations__cta:hover {
+.formations__toggle-btn--active {
   background: var(--purple);
   color: var(--white);
 }
