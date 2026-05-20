@@ -1,0 +1,126 @@
+.fe-process {
+  padding: 64px 24px;
+  background: var(--gray-light);
+}
+
+.fe-process__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.fe-process__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fe-process__title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.fe-process__accent {
+  color: var(--purple);
+}
+
+.fe-process__subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+/* ── Steps ───────────────────────────────── */
+.fe-process__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fe-process__step {
+  display: flex;
+  gap: 24px;
+}
+
+.fe-process__step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.fe-process__step-number {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--purple);
+  background: var(--purple-glow);
+  border: 1px solid var(--purple);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fe-process__step-line {
+  flex: 1;
+  width: 1px;
+  background: var(--border);
+  margin: 6px 0;
+  min-height: 24px;
+}
+
+.fe-process__step:last-child .fe-process__step-line {
+  display: none;
+}
+
+.fe-process__step-body {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 40px;
+  align-items: flex-start;
+}
+
+.fe-process__step:last-child .fe-process__step-body {
+  padding-bottom: 0;
+}
+
+.fe-process__step-icon {
+  font-size: 22px;
+  color: var(--purple);
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.fe-process__step-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.fe-process__step-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+
+@media (min-width: 900px) {
+  .fe-process {
+    padding: 128px 24px;
+  }
+}

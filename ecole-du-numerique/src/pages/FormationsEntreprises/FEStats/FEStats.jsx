@@ -24,7 +24,7 @@ export default function FEStats() {
           ))}
         </div>
 
-        <Link to="/contact" className="fe-stats__cta">Demander un devis</Link>
+        <Link to="/contact" className="fe-stats__cta">Nous contacter</Link>
       </div>
     </section>
   )
