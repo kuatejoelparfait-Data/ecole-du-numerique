@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { formations } from '../../../data/formations'
+import { formations } from '../../../data/formationsParticuliers'
 import './FPCategories.css'
 
 const categoryMeta = [
@@ -40,12 +40,14 @@ const categoryImages = {
 }
 
 export default function FPCategories() {
-  const [active, setActive] = useState(categoryMeta[0].id)
+  const [active, setActive] = useState(
+    () => sessionStorage.getItem('fp-tab') || categoryMeta[0].id
+  )
 
   const current = formations.filter(f => f.category === active)
 
   return (
-    <section className="fp-categories">
+    <section id="nos-formations" className="fp-categories">
       <div className="fp-categories__container">
 
         <div className="fp-categories__header">
@@ -62,7 +64,7 @@ export default function FPCategories() {
             <button
               key={cat.id}
               className={`fp-categories__tab${active === cat.id ? ' fp-categories__tab--active' : ''}`}
-              onClick={() => setActive(cat.id)}
+              onClick={() => { sessionStorage.setItem('fp-tab', cat.id); setActive(cat.id) }}
             >
               <img src={cat.image} alt={cat.label} className="fp-categories__tab-img" loading="lazy" />
               <span className="material-symbols-rounded fp-categories__tab-icon">{cat.icon}</span>

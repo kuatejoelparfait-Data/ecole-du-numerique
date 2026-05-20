@@ -14,11 +14,13 @@ const categoryIcon  = Object.fromEntries(categoryMeta.map(c => [c.id, c.icon]))
 const categoryImage = Object.fromEntries(categoryMeta.map(c => [c.id, c.image]))
 
 export default function FECategories() {
-  const [active, setActive] = useState(categoryMeta[0].id)
+  const [active, setActive] = useState(
+    () => sessionStorage.getItem('fe-tab') || categoryMeta[0].id
+  )
   const current = formationsEntreprises.filter(f => f.category === active)
 
   return (
-    <section className="fe-categories">
+    <section id="nos-formations" className="fe-categories">
       <div className="fe-categories__container">
 
         <div className="fe-categories__header">
@@ -35,7 +37,7 @@ export default function FECategories() {
             <button
               key={cat.id}
               className={`fe-categories__tab${active === cat.id ? ' fe-categories__tab--active' : ''}`}
-              onClick={() => setActive(cat.id)}
+              onClick={() => { sessionStorage.setItem('fe-tab', cat.id); setActive(cat.id) }}
             >
               <img src={cat.image} alt={cat.label} className="fe-categories__tab-img" loading="lazy" />
               <span className="material-symbols-rounded fe-categories__tab-icon">{cat.icon}</span>
