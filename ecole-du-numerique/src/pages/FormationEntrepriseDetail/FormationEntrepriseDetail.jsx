@@ -57,7 +57,7 @@ export default function FormationEntrepriseDetail() {
             </div>
 
             <div className="fed-content__block">
-              <h2 className="fed-content__block-title">Ce que vous apprendrez</h2>
+              <h2 className="fed-content__block-title">{formation.outcomesTitle || 'Ce que vous apprendrez'}</h2>
               <ul className="fed-content__outcomes">
                 {formation.outcomes.map((item, i) => (
                   <li key={i} className="fed-content__outcome">
@@ -70,7 +70,7 @@ export default function FormationEntrepriseDetail() {
 
             <div className="fed-content__block">
               <h2 className="fed-content__block-title">Prérequis</h2>
-              <p className="fed-content__text">{formation.prerequisites}</p>
+              <p className="fed-content__text" style={{ whiteSpace: 'pre-line' }}>{formation.prerequisites}</p>
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { getFormationBySlug } from '../../data/formations'
+import { getFormationBySlug } from '../../data/formationsParticuliers'
 import './FormationParticulierDetail.css'
 
 const categoryImages = {
@@ -71,7 +71,7 @@ export default function FormationParticulierDetail() {
 
             <div className="fd-content__block">
               <h2 className="fd-content__block-title">Prérequis</h2>
-              <p className="fd-content__text">{formation.prerequisites}</p>
+              <p className="fd-content__text" style={{ whiteSpace: 'pre-line' }}>{formation.prerequisites}</p>
             </div>
           </div>
 
