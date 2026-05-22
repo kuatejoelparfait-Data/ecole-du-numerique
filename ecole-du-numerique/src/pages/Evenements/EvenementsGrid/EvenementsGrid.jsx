@@ -7,7 +7,7 @@ const today = new Date()
 export default function EvenementsGrid() {
   if (evenements.length === 0) {
     return (
-      <section className="evenements-grid">
+      <section id="nos-evenements" className="evenements-grid">
         <div className="evenements-grid__container">
           <div className="evenements-grid__empty">
             <span className="material-symbols-rounded">event_busy</span>
@@ -20,7 +20,7 @@ export default function EvenementsGrid() {
   }
 
   return (
-    <section className="evenements-grid">
+    <section id="nos-evenements" className="evenements-grid">
       <div className="evenements-grid__container">
         {evenements.map(evt => {
           const isPast = new Date(evt.dateISO) < today

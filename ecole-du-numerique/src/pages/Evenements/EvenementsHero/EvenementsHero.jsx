@@ -8,9 +8,16 @@ export default function EvenementsHero() {
           <h1 className="evenements-hero__title">
             Nos <span className="evenements-hero__accent">événements</span>
           </h1>
-          <p className="evenements-hero__subtitle">
-            Masterclass, conférences et ateliers pour rester à la pointe du numérique.
+          <p className="evenements-hero__desc">
+            Masterclass, conférences et ateliers animés par des experts du numérique.
+            Venez apprendre, échanger et repartir avec des compétences concrètes et des contacts qui comptent.
           </p>
+          <div className="evenements-hero__badges">
+            <span className="evenements-hero__badge">✓ Masterclass & Conférences</span>
+            <span className="evenements-hero__badge">✓ Ateliers pratiques</span>
+            <span className="evenements-hero__badge">✓ Networking</span>
+          </div>
+          <a href="#nos-evenements" className="evenements-hero__cta">Voir les prochains événements</a>
         </div>
         <div className="evenements-hero__img-wrapper">
           <img
