@@ -16,7 +16,7 @@ export default function PartenairesForm() {
   }
 
   return (
-    <section className="partenaires-form">
+    <section id="partenaires-form" className="partenaires-form">
       <div className="partenaires-form__container">
         <div className="partenaires-form__header">
           <h2 className="partenaires-form__title">Parlons de votre projet</h2>
@@ -56,7 +56,7 @@ export default function PartenairesForm() {
                 <option value="">Choisir un type</option>
                 <option value="Institutionnel">Partenaire institutionnel</option>
                 <option value="Entreprise">Partenaire entreprise</option>
-                <option value="École / Université">École / Université</option>
+                <option value="Pédagogique">Partenaire pédagogique</option>
                 <option value="Autre">Autre</option>
               </select>
             </div>

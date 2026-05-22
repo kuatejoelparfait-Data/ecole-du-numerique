@@ -1,7 +1,6 @@
 .partenaires-actuels {
   padding: 64px 24px;
   background: var(--white);
-  text-align: center;
 }
 
 .partenaires-actuels__container {
@@ -9,60 +8,172 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
+  gap: 56px;
 }
 
-.partenaires-actuels__title {
-  font-size: clamp(22px, 3vw, 32px);
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -0.02em;
-}
-
-.partenaires-actuels__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.partenaires-actuels__item {
+.partenaires-actuels__header {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 12px;
 }
 
-.partenaires-actuels__logo {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.7;
-  transition: filter 0.2s, opacity 0.2s;
+.partenaires-actuels__title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
-.partenaires-actuels__logo:hover {
-  filter: grayscale(0);
-  opacity: 1;
+.partenaires-actuels__accent {
+  color: var(--purple);
 }
 
-.partenaires-actuels__name {
-  font-size: 14px;
-  font-weight: 700;
+.partenaires-actuels__subtitle {
+  font-size: 17px;
   color: var(--text-muted);
 }
 
-.partenaires-actuels__logo-placeholder {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  background: var(--border);
+/* ── Grid ────────────────────────────────── */
+.partenaires-actuels__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ── Card de base ────────────────────────── */
+.partenaires-actuels__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.partenaires-actuels__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.partenaires-actuels__logo-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partenaires-actuels__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.partenaires-actuels__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.partenaires-actuels__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.partenaires-actuels__role {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ── Placeholder "à venir" ───────────────── */
+.partenaires-actuels__card--soon {
+  border: 2px dashed var(--border);
+  background: transparent;
+  cursor: default;
+  pointer-events: none;
+}
+
+.partenaires-actuels__card--soon:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.partenaires-actuels__placeholder-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partenaires-actuels__placeholder-icon .material-symbols-rounded {
+  font-size: 28px;
+  color: var(--border);
+}
+
+/* ── Card "Devenez partenaire" ───────────── */
+.partenaires-actuels__card--join {
+  border: 2px dashed var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.partenaires-actuels__card--join:hover {
+  border-color: var(--purple);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.partenaires-actuels__card--join .partenaires-actuels__name {
+  color: var(--purple);
+}
+
+.partenaires-actuels__join-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.partenaires-actuels__card--join:hover .partenaires-actuels__join-icon {
+  border-color: var(--purple);
+}
+
+.partenaires-actuels__join-icon .material-symbols-rounded {
+  font-size: 28px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.partenaires-actuels__card--join:hover .partenaires-actuels__join-icon .material-symbols-rounded {
+  color: var(--purple);
+}
+
+@media (min-width: 560px) {
+  .partenaires-actuels__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 900px) {
   .partenaires-actuels {
     padding: 96px 24px;
+  }
+
+  .partenaires-actuels__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

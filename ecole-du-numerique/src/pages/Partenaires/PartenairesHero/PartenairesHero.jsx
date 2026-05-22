@@ -8,9 +8,16 @@ export default function PartenairesHero() {
           <h1 className="partenaires-hero__title">
             Construisons ensemble <span className="partenaires-hero__accent">l'écosystème digital</span> belge
           </h1>
-          <p className="partenaires-hero__subtitle">
+          <p className="partenaires-hero__desc">
             Rejoignez un réseau d'acteurs engagés pour la formation numérique en Belgique.
+            Ensemble, donnons à chacun les compétences pour réussir dans un monde digital.
           </p>
+          <div className="partenaires-hero__badges">
+            <span className="partenaires-hero__badge">✓ Réseau de +600 formés</span>
+            <span className="partenaires-hero__badge">✓ Visibilité digitale</span>
+            <span className="partenaires-hero__badge">✓ Impact territorial</span>
+          </div>
+          <a href="#partenaires-form" className="partenaires-hero__cta">Devenir partenaire</a>
         </div>
         <div className="partenaires-hero__img-wrapper">
           <img
