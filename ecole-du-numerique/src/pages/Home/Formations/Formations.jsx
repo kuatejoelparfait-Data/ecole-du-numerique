@@ -67,7 +67,7 @@ export default function Formations() {
   const href = audience === 'particuliers' ? '/formations-particuliers' : '/formations-entreprises'
 
   return (
-    <section className="formations">
+    <section id="nos-formations" className="formations">
       <div className="formations__container">
 
         <div className="formations__header">

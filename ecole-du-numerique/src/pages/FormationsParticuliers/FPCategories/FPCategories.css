@@ -188,13 +188,18 @@
 .fp-categories__card-cta {
   font-size: 13px;
   font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 99px;
+  background: transparent;
+  border: 1.5px solid var(--purple);
   color: var(--purple);
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .fp-categories__card-cta:hover {
-  color: var(--purple-light);
+  background: var(--purple);
+  color: var(--white);
 }
 
 /* ── Tablette ────────────────────────────── */

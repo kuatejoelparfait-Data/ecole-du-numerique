@@ -18,6 +18,7 @@ import FormationEntrepriseDetail  from './pages/FormationEntrepriseDetail/Format
 import EvenementDetail        from './pages/EvenementDetail/EvenementDetail'
 import WorkshopDetail         from './pages/WorkshopDetail/WorkshopDetail'
 import Pricing                from './pages/Pricing/Pricing'
+import BlogDetail             from './pages/BlogDetail/BlogDetail'
 import NotFound               from './pages/NotFound/NotFound'
 import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite/PolitiqueConfidentialite'
 import Remboursements           from './pages/Remboursements/Remboursements'
@@ -37,6 +38,7 @@ function App() {
           <Route path="/workshops"               element={<Workshops />} />
           <Route path="/partenaires"             element={<Partenaires />} />
           <Route path="/blog"                    element={<Blog />} />
+          <Route path="/blog/:slug"              element={<BlogDetail />} />
           <Route path="/contact"                 element={<Contact />} />
           <Route path="/pricing"                 element={<Pricing />} />
           <Route path="/formations/:slug"             element={<FormationParticulierDetail />} />
