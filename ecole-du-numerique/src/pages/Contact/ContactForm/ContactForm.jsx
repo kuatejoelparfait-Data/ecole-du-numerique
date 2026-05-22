@@ -37,7 +37,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="contact">
+    <section id="contact-form" className="contact">
       <div className="contact__container">
 
         <div className="contact__form-wrapper">

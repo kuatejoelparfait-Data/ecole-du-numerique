@@ -8,10 +8,9 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 56px;
 }
 
-/* ── Header ─────────────────────────────── */
 .contact-brands__header {
   text-align: center;
   display: flex;
@@ -20,10 +19,10 @@
 }
 
 .contact-brands__title {
-  font-size: clamp(26px, 3vw, 38px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
-  color: var(--text);
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .contact-brands__accent {
@@ -31,79 +30,147 @@
 }
 
 .contact-brands__subtitle {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-muted);
 }
 
 /* ── Grid ────────────────────────────────── */
 .contact-brands__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-/* ── Card ────────────────────────────────── */
+/* ── Card de base ────────────────────────── */
 .contact-brands__card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 28px 20px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
   text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.25s, transform 0.25s;
 }
 
 .contact-brands__card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
 }
 
-.contact-brands__card--empty {
-  border: 1px dashed var(--border);
+.contact-brands__logo-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-brands__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.contact-brands__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-brands__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.contact-brands__role {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ── Placeholder "à venir" ───────────────── */
+.contact-brands__card--soon {
+  border: 2px dashed var(--border);
   background: transparent;
-  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
 }
 
-.contact-brands__card--empty:hover {
+.contact-brands__card--soon:hover {
   box-shadow: none;
   transform: none;
 }
 
-.contact-brands__logo {
+.contact-brands__placeholder-icon {
+  width: 80px;
   height: 80px;
-  width: auto;
-  object-fit: contain;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.contact-brands__add {
+.contact-brands__placeholder-icon .material-symbols-rounded {
   font-size: 28px;
-  color: var(--text-muted);
-  opacity: 0.3;
-}
-
-.contact-brands__name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-.contact-brands__name--muted {
   color: var(--border);
 }
 
-/* ── Desktop ─────────────────────────────── */
+/* ── Card "Devenez partenaire" ───────────── */
+.contact-brands__card--join {
+  border: 2px dashed var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.contact-brands__card--join:hover {
+  border-color: var(--purple);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.contact-brands__card--join .contact-brands__name {
+  color: var(--purple);
+}
+
+.contact-brands__join-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.contact-brands__card--join:hover .contact-brands__join-icon {
+  border-color: var(--purple);
+}
+
+.contact-brands__join-icon .material-symbols-rounded {
+  font-size: 28px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.contact-brands__card--join:hover .contact-brands__join-icon .material-symbols-rounded {
+  color: var(--purple);
+}
+
 @media (min-width: 560px) {
   .contact-brands__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 900px) {
   .contact-brands {
-    padding: 128px 24px;
+    padding: 96px 24px;
   }
 
   .contact-brands__grid {
