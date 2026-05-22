@@ -8,9 +8,16 @@ export default function WorkshopsHero() {
           <h1 className="workshops-hero__title">
             Nos <span className="workshops-hero__accent">workshops</span>
           </h1>
-          <p className="workshops-hero__subtitle">
-            Sessions courtes et pratiques pour monter en compétences rapidement.
+          <p className="workshops-hero__desc">
+            Des sessions courtes, intensives et 100% pratiques. En 2 à 4h,
+            vous repartez avec une compétence directement applicable — sans vous engager sur plusieurs semaines.
           </p>
+          <div className="workshops-hero__badges">
+            <span className="workshops-hero__badge">✓ Sessions de 2 à 4h</span>
+            <span className="workshops-hero__badge">✓ Petits groupes</span>
+            <span className="workshops-hero__badge">✓ Pratique immédiate</span>
+          </div>
+          <a href="#nos-workshops" className="workshops-hero__cta">Voir les prochains workshops</a>
         </div>
         <div className="workshops-hero__img-wrapper">
           <img

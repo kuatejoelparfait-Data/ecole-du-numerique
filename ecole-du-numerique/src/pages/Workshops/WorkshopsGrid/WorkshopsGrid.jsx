@@ -7,7 +7,7 @@ const today = new Date()
 export default function WorkshopsGrid() {
   if (workshops.length === 0) {
     return (
-      <section className="workshops-grid">
+      <section id="nos-workshops" className="workshops-grid">
         <div className="workshops-grid__container">
           <div className="workshops-grid__empty">
             <span className="material-symbols-rounded">event_busy</span>
@@ -20,7 +20,7 @@ export default function WorkshopsGrid() {
   }
 
   return (
-    <section className="workshops-grid">
+    <section id="nos-workshops" className="workshops-grid">
       <div className="workshops-grid__container">
         {workshops.map(ws => {
           const isPast = new Date(ws.dateISO) < today
