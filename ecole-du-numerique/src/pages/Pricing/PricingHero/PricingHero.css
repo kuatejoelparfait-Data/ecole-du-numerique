@@ -36,6 +36,48 @@
   line-height: 1.6;
 }
 
+.pricing-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pricing-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 99px;
+  padding: 6px 14px;
+}
+
+.pricing-hero__badge .material-symbols-rounded {
+  font-size: 16px;
+}
+
+.pricing-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--purple);
+  padding: 13px 28px;
+  border-radius: 99px;
+  transition: background 0.2s, transform 0.2s;
+  width: fit-content;
+}
+
+.pricing-hero__cta:hover {
+  background: var(--purple-light);
+  transform: translateY(-1px);
+}
+
 .pricing-hero__img-wrapper {
   width: 100%;
   max-height: 280px;

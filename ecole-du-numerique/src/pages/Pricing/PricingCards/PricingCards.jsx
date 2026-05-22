@@ -5,6 +5,7 @@ const plans = [
   {
     icon: 'person',
     label: 'Particulier',
+    highlight: 'fp',
     price: '297',
     desc: 'Idéal pour les indépendants et entrepreneurs qui souhaitent monter en compétences à leur rythme.',
     features: [
@@ -21,6 +22,7 @@ const plans = [
   {
     icon: 'business',
     label: 'Entreprise',
+    highlight: 'fe',
     price: '497',
     desc: 'Pour les équipes et organisations qui souhaitent former leurs collaborateurs sur mesure.',
     features: [
@@ -55,11 +57,11 @@ const plans = [
 
 export default function PricingCards() {
   return (
-    <section className="pricing-cards">
+    <section id="pricing-cards" className="pricing-cards">
       <div className="pricing-cards__container">
         <div className="pricing-cards__grid">
           {plans.map(plan => (
-            <div key={plan.label} className={`pricing-card${plan.highlight ? ' pricing-card--highlight' : ''}`}>
+            <div key={plan.label} className={`pricing-card${plan.highlight ? ` pricing-card--${plan.highlight}` : ''}`}>
               <div className="pricing-card__top">
                 <span className="material-symbols-rounded pricing-card__icon">{plan.icon}</span>
                 <p className="pricing-card__label">{plan.label}</p>
