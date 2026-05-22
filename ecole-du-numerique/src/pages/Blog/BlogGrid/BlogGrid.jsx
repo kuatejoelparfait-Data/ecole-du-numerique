@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { articles } from '../../../data/articles'
 import './BlogGrid.css'
 
@@ -12,7 +13,7 @@ export default function BlogGrid() {
     : articles.filter(a => a.category === active)
 
   return (
-    <section className="blog-grid">
+    <section id="blog-articles" className="blog-grid">
       <div className="blog-grid__container">
 
         <div className="blog-grid__filters">
@@ -29,7 +30,7 @@ export default function BlogGrid() {
 
         <div className="blog-grid__list">
           {filtered.map(article => (
-            <article key={article.slug} className="blog-card">
+            <Link key={article.slug} to={`/blog/${article.slug}`} className="blog-card">
               <img src={article.image} alt={article.title} className="blog-card__img" loading="lazy" />
               <div className="blog-card__body">
                 <div className="blog-card__meta">
@@ -41,7 +42,7 @@ export default function BlogGrid() {
                 <p className="blog-card__excerpt">{article.excerpt}</p>
                 <span className="blog-card__cta">Lire l'article →</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 

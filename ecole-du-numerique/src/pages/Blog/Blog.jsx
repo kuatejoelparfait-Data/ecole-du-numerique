@@ -11,7 +11,7 @@ export default function Blog() {
       <BlogGrid />
       <Wave top="#F8F7FC" bottom="#3b1fa3" />
       <BlogNewsletter />
-      <Wave top="#7b2fff" bottom="#FFFFFF" />
+      <Wave top="#7b2fff" bottom="#F8F7FC" />
       <BlogCTA />
     </>
   )
