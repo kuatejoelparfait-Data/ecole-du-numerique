@@ -9,7 +9,7 @@ const members = [
 
 export default function AboutTeam() {
   return (
-    <section className="about-team">
+    <section id="about-team" className="about-team">
       <div className="about-team__container">
         <div className="about-team__header">
           <h2 className="about-team__title">

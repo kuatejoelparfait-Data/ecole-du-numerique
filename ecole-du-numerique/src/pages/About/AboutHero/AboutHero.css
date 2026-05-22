@@ -18,6 +18,14 @@
   flex: 1;
 }
 
+.about-hero__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--purple-light);
+}
+
 .about-hero__title {
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
@@ -37,6 +45,47 @@
   font-size: 17px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.about-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 99px;
+  padding: 6px 14px;
+}
+
+.about-hero__badge .material-symbols-rounded {
+  font-size: 16px;
+}
+
+.about-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--purple);
+  padding: 13px 28px;
+  border-radius: 99px;
+  transition: background 0.2s, transform 0.2s;
+  width: fit-content;
+}
+
+.about-hero__cta:hover {
+  background: var(--purple-light);
+  transform: translateY(-1px);
 }
 
 .about-hero__img-wrapper {
