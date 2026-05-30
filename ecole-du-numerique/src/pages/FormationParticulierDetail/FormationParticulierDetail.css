@@ -189,6 +189,16 @@
   color: var(--text-muted);
 }
 
+.fd-content__card-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--purple);
+  margin-top: -4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.02em;
+}
+
 .fd-content__card-value {
   font-size: 15px;
   font-weight: 600;

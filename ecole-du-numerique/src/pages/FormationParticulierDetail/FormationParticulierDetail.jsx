@@ -77,6 +77,8 @@ export default function FormationParticulierDetail() {
 
           <aside className="fd-content__aside">
             <div className="fd-content__card">
+              <p className="fd-content__card-label">Tarif</p>
+              <p className="fd-content__card-price">à partir de 400 €</p>
               <p className="fd-content__card-label">Niveau</p>
               <p className="fd-content__card-value">{formation.level}</p>
               <p className="fd-content__card-label">Catégorie</p>

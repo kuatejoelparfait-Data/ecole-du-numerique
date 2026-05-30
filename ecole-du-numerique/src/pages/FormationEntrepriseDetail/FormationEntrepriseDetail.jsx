@@ -68,6 +68,24 @@ export default function FormationEntrepriseDetail() {
               </ul>
             </div>
 
+            {formation.programme && formation.programme.length > 0 && (
+              <div className="fed-content__block">
+                <h2 className="fed-content__block-title">Programme détaillé</h2>
+                <div className="fed-content__programme">
+                  {formation.programme.map((module, i) => (
+                    <div key={i} className="fed-content__module">
+                      <p className="fed-content__module-title">{module.title}</p>
+                      <ul className="fed-content__module-points">
+                        {module.points.map((point, j) => (
+                          <li key={j}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="fed-content__block">
               <h2 className="fed-content__block-title">Prérequis</h2>
               <p className="fed-content__text" style={{ whiteSpace: 'pre-line' }}>{formation.prerequisites}</p>
@@ -76,10 +94,42 @@ export default function FormationEntrepriseDetail() {
 
           <aside className="fed-content__aside">
             <div className="fed-content__card">
-              <p className="fed-content__card-label">Niveau</p>
-              <p className="fed-content__card-value">{formation.level}</p>
+
+              {formation.duration && (
+                <>
+                  <p className="fed-content__card-label">Durée</p>
+                  <p className="fed-content__card-value">{formation.duration}</p>
+                </>
+              )}
+
+              {formation.price && (
+                <>
+                  <p className="fed-content__card-label">Tarif</p>
+                  <p className="fed-content__card-price">{formation.price}</p>
+                </>
+              )}
+
+              {formation.options && formation.options.length > 0 && (
+                <>
+                  <p className="fed-content__card-label">Modalités</p>
+                  <div className="fed-content__card-options">
+                    {formation.options.map((opt, i) => (
+                      <span key={i} className="fed-content__card-option">{opt}</span>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {formation.level && (
+                <>
+                  <p className="fed-content__card-label">Niveau</p>
+                  <p className="fed-content__card-value">{formation.level}</p>
+                </>
+              )}
+
               <p className="fed-content__card-label">Catégorie</p>
               <p className="fed-content__card-value">{formation.category}</p>
+
               <Link to="/contact" className="fed-content__cta">Demander un devis</Link>
               <Link to="/contact" className="fed-content__cta-secondary">Demander des infos</Link>
             </div>

@@ -147,6 +147,47 @@
   margin-top: 1px;
 }
 
+/* ── Programme ──────────────────────────── */
+.fed-content__programme {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fed-content__module-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--purple);
+}
+
+.fed-content__module-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fed-content__module-points li {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.fed-content__module-points li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+  font-weight: 700;
+}
+
 /* ── Aside ──────────────────────────────── */
 .fed-content__card {
   background: var(--white);
@@ -178,6 +219,34 @@
 .fed-content__card-value:last-of-type {
   border-bottom: none;
   margin-bottom: 8px;
+}
+
+.fed-content__card-price {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-top: -4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fed-content__card-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fed-content__card-option {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: var(--purple-glow);
+  color: var(--purple);
+  border: 1px solid rgba(123,47,255,0.2);
 }
 
 .fed-content__cta {
