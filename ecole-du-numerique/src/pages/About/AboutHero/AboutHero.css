@@ -35,10 +35,7 @@
 }
 
 .about-hero__accent {
-  background: linear-gradient(135deg, #9B5FFF 0%, #7B2FFF 50%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--purple);
 }
 
 .about-hero__desc {

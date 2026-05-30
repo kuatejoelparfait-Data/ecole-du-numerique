@@ -1,6 +1,6 @@
 .pricing-cards {
   padding: 64px 24px;
-  background: var(--gray-light);
+  background: #F8F7FC;
 }
 
 .pricing-cards__container {
@@ -19,27 +19,61 @@
   width: 100%;
 }
 
-/* ── Card ─────────────────────────────────── */
+/* ── Card base ───────────────────────────── */
 .pricing-card {
-  background: var(--white);
-  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  position: relative;
 }
 
-.pricing-card--fp {
-  background: linear-gradient(135deg, #4c1d95 0%, #7b2fff 60%, #a855f7 100%);
-  border-color: transparent;
+/* Violet signature */
+.pricing-card--violet {
+  background: #7B2FFF;
+  border: none;
 }
 
-.pricing-card--fe {
-  background: linear-gradient(135deg, #1a0533 0%, #3b1fa3 50%, #7b2fff 100%);
-  border-color: transparent;
+/* Bleu formations entreprises */
+.pricing-card--blue {
+  background: #3b1fa3;
+  border: none;
 }
 
+/* Blanc */
+.pricing-card--white {
+  background: #ffffff;
+  border: 1px solid #e5e2f0;
+}
+
+/* ── Même hauteur en desktop ─────────────── */
+@media (min-width: 768px) {
+  .pricing-cards__grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+/* ── Badge ───────────────────────────────── */
+.pricing-card__badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #fff;
+  color: #3b1fa3;
+  border: 1.5px solid #3b1fa3;
+  padding: 4px 16px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+/* ── Top ─────────────────────────────────── */
 .pricing-card__top {
   display: flex;
   flex-direction: column;
@@ -48,73 +82,90 @@
 
 .pricing-card__icon {
   font-size: 28px;
-  color: var(--purple);
-  background: var(--purple-glow);
   padding: 10px;
   border-radius: var(--radius);
   width: fit-content;
 }
 
-.pricing-card--fp .pricing-card__icon,
-.pricing-card--fe .pricing-card__icon {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.15);
+.pricing-card--violet .pricing-card__icon,
+.pricing-card--blue .pricing-card__icon {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
+.pricing-card--white .pricing-card__icon {
+  color: var(--purple);
+  background: var(--purple-glow);
+}
+
+/* Label */
 .pricing-card__label {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
 }
 
-.pricing-card--fp .pricing-card__label,
-.pricing-card--fe .pricing-card__label {
-  color: rgba(255, 255, 255, 0.7);
-}
+.pricing-card--violet .pricing-card__label,
+.pricing-card--blue .pricing-card__label  { color: rgba(255, 255, 255, 0.65); }
+.pricing-card--white .pricing-card__label { color: var(--text-muted); }
 
+/* Prix */
 .pricing-card__price {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.pricing-card__from {
+.pricing-card__prefix {
   font-size: 12px;
-  color: var(--text-muted);
 }
 
-.pricing-card--fp .pricing-card__from,
-.pricing-card--fe .pricing-card__from {
-  color: rgba(255, 255, 255, 0.7);
-}
+.pricing-card--violet .pricing-card__prefix,
+.pricing-card--blue .pricing-card__prefix  { color: rgba(255, 255, 255, 0.65); }
+.pricing-card--white .pricing-card__prefix { color: var(--text-muted); }
 
 .pricing-card__amount {
   font-size: clamp(36px, 5vw, 52px);
   font-weight: 800;
-  color: var(--text);
   letter-spacing: -0.03em;
   line-height: 1;
 }
 
-.pricing-card--fp .pricing-card__amount,
-.pricing-card--fe .pricing-card__amount {
-  color: var(--white);
+.pricing-card--violet .pricing-card__amount,
+.pricing-card--blue .pricing-card__amount  { color: #fff; }
+.pricing-card--white .pricing-card__amount { color: var(--dark); }
+
+.pricing-card__currency {
+  font-size: 0.55em;
+  font-weight: 700;
+  vertical-align: super;
+  margin-left: 2px;
 }
 
+/* Tarif sur demande */
+.pricing-card__on-demand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.pricing-card--violet .pricing-card__on-demand,
+.pricing-card--blue .pricing-card__on-demand  { color: #fff; }
+.pricing-card--white .pricing-card__on-demand { color: var(--dark); }
+
+/* Desc */
 .pricing-card__desc {
   font-size: 14px;
-  color: var(--text-muted);
   line-height: 1.7;
 }
 
-.pricing-card--fp .pricing-card__desc,
-.pricing-card--fe .pricing-card__desc {
-  color: rgba(255, 255, 255, 0.75);
-}
+.pricing-card--violet .pricing-card__desc,
+.pricing-card--blue .pricing-card__desc  { color: rgba(255, 255, 255, 0.75); }
+.pricing-card--white .pricing-card__desc { color: var(--text-muted); }
 
-/* ── Features ─────────────────────────────── */
+/* ── Features ────────────────────────────── */
 .pricing-card__features {
   display: flex;
   flex-direction: column;
@@ -130,30 +181,27 @@
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  color: var(--text);
 }
 
-.pricing-card--fp .pricing-card__feature,
-.pricing-card--fe .pricing-card__feature {
-  color: rgba(255, 255, 255, 0.9);
-}
+.pricing-card--violet .pricing-card__feature,
+.pricing-card--blue .pricing-card__feature  { color: rgba(255, 255, 255, 0.9); }
+.pricing-card--white .pricing-card__feature { color: var(--text); }
 
 .pricing-card__check {
   font-size: 18px;
-  color: var(--purple);
   flex-shrink: 0;
 }
 
-.pricing-card--fp .pricing-card__check,
-.pricing-card--fe .pricing-card__check {
-  color: var(--white);
-}
+.pricing-card--violet .pricing-card__check,
+.pricing-card--blue .pricing-card__check  { color: rgba(255, 255, 255, 0.8); }
+.pricing-card--white .pricing-card__check { color: var(--purple); }
 
-/* ── CTA ──────────────────────────────────── */
+/* ── Actions ─────────────────────────────── */
 .pricing-card__actions {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: auto;
 }
 
 .pricing-card__cta {
@@ -164,69 +212,36 @@
   border-radius: 99px;
   font-size: 15px;
   font-weight: 600;
-  background: var(--purple);
-  color: var(--white);
-  transition: background 0.2s, transform 0.2s;
   text-align: center;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .pricing-card__cta:hover {
-  background: var(--purple-light);
   transform: translateY(-1px);
+  opacity: 0.88;
 }
 
-.pricing-card__cta--outline {
-  background: transparent;
-  border: 2px solid var(--purple);
+/* Bouton primaire par thème */
+.pricing-card--violet .pricing-card__cta,
+.pricing-card--blue .pricing-card__cta {
+  background: #fff;
   color: var(--purple);
 }
 
-.pricing-card__cta--outline:hover {
-  background: var(--dark);
-  border-color: var(--dark);
-  color: var(--white);
-  transform: translateY(-1px);
+.pricing-card--white .pricing-card__cta {
+  background: var(--purple);
+  color: #fff;
 }
 
-.pricing-card--fp .pricing-card__cta,
-.pricing-card--fe .pricing-card__cta {
-  background: var(--white);
-  color: var(--purple);
-}
 
-.pricing-card--fp .pricing-card__cta:hover,
-.pricing-card--fe .pricing-card__cta:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.pricing-card--fp .pricing-card__cta--outline,
-.pricing-card--fe .pricing-card__cta--outline {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: var(--white);
-}
-
-.pricing-card--fp .pricing-card__cta--outline:hover,
-.pricing-card--fe .pricing-card__cta--outline:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.6);
-  transform: translateY(-1px);
-}
-
-/* ── Note ─────────────────────────────────── */
+/* ── Note ────────────────────────────────── */
 .pricing-cards__note {
   font-size: 13px;
   color: var(--text-muted);
   text-align: center;
 }
 
-/* ── Desktop ─────────────────────────────── */
-@media (min-width: 768px) {
-  .pricing-cards__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* ── Responsive ──────────────────────────── */
 @media (min-width: 900px) {
   .pricing-cards {
     padding: 96px 24px;

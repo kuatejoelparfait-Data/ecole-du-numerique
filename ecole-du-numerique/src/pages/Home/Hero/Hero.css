@@ -13,7 +13,7 @@
   left: -100px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(123,47,255,0.18) 0%, transparent 70%);
+  background: transparent;
   pointer-events: none;
 }
 
@@ -58,10 +58,7 @@
 
 .hero__title-accent {
   display: block;
-  background: linear-gradient(135deg, #9B5FFF 0%, #7B2FFF 50%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--purple);
 }
 
 .hero__desc {
