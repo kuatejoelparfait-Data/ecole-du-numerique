@@ -52,7 +52,7 @@ export default function PartenairesForm() {
 
             <div className="partenaires-form__field">
               <label className="partenaires-form__label">Type de partenariat souhaité</label>
-              <select name="type" className="partenaires-form__input">
+              <select name="type" className="partenaires-form__input partenaires-form__select">
                 <option value="">Choisir un type</option>
                 <option value="Institutionnel">Partenaire institutionnel</option>
                 <option value="Entreprise">Partenaire entreprise</option>
