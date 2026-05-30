@@ -17,7 +17,7 @@ export default function EvenementsHero() {
             <span className="evenements-hero__badge">✓ Ateliers pratiques</span>
             <span className="evenements-hero__badge">✓ Networking</span>
           </div>
-          <a href="#nos-evenements" className="evenements-hero__cta">Voir les prochains événements</a>
+          <a href="#programme" className="evenements-hero__cta">Voir nos prochains événements & ateliers</a>
         </div>
         <div className="evenements-hero__img-wrapper">
           <img

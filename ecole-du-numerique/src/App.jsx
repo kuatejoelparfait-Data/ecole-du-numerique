@@ -8,8 +8,8 @@ import Home                  from './pages/Home/Home'
 import About                 from './pages/About/About'
 import FormationsParticuliers from './pages/FormationsParticuliers/FormationsParticuliers'
 import FormationsEntreprises  from './pages/FormationsEntreprises/FormationsEntreprises'
-import Evenements             from './pages/Evenements/Evenements'
-import Workshops              from './pages/Workshops/Workshops'
+import NosEvenements          from './pages/NosEvenements/NosEvenements'
+import VosWorkshops           from './pages/VosWorkshops/VosWorkshops'
 import Partenaires            from './pages/Partenaires/Partenaires'
 import Blog                   from './pages/Blog/Blog'
 import Contact                from './pages/Contact/Contact'
@@ -34,8 +34,8 @@ function App() {
           <Route path="/a-propos"                element={<About />} />
           <Route path="/formations-particuliers" element={<FormationsParticuliers />} />
           <Route path="/formations-entreprises"  element={<FormationsEntreprises />} />
-          <Route path="/evenements"              element={<Evenements />} />
-          <Route path="/workshops"               element={<Workshops />} />
+          <Route path="/evenements"              element={<NosEvenements />} />
+          <Route path="/workshops"               element={<VosWorkshops />} />
           <Route path="/partenaires"             element={<Partenaires />} />
           <Route path="/blog"                    element={<Blog />} />
           <Route path="/blog/:slug"              element={<BlogDetail />} />

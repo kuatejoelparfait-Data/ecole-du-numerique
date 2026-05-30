@@ -1,17 +1,17 @@
 import Wave from '../../components/Dividers/Wave'
 import EvenementsHero from './EvenementsHero/EvenementsHero'
 import EvenementsWhy from './EvenementsWhy/EvenementsWhy'
-import EvenementsGrid from './EvenementsGrid/EvenementsGrid'
+import NEGrid from './NEGrid/NEGrid'
 import EvenementsTestimonials from './EvenementsTestimonials/EvenementsTestimonials'
 import EvenementsFAQ from './EvenementsFAQ/EvenementsFAQ'
 import EvenementsCTA from './EvenementsCTA/EvenementsCTA'
 
-export default function Evenements() {
+export default function NosEvenements() {
   return (
     <>
       <EvenementsHero />
       <EvenementsWhy />
-      <EvenementsGrid />
+      <NEGrid />
       <EvenementsTestimonials />
       <EvenementsFAQ />
       <Wave top="#F8F7FC" bottom="#4c1d95" />

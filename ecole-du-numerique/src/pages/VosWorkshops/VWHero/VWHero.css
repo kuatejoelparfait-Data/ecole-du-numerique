@@ -1,9 +1,9 @@
-.workshops-hero {
+.vw-hero {
   background: var(--dark);
   padding: 64px 24px;
 }
 
-.workshops-hero__container {
+.vw-hero__container {
   max-width: var(--container);
   margin: 0 auto;
   display: flex;
@@ -11,27 +11,22 @@
   gap: 40px;
 }
 
-.workshops-hero__content {
+.vw-hero__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
 }
 
-.workshops-hero__img-wrapper {
-  width: 100%;
-  height: 260px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+.vw-hero__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-light);
 }
 
-.workshops-hero__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.workshops-hero__title {
+.vw-hero__title {
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 800;
   color: var(--white);
@@ -39,24 +34,24 @@
   line-height: 1.15;
 }
 
-.workshops-hero__accent {
+.vw-hero__accent {
   color: var(--purple-light);
 }
 
-.workshops-hero__desc {
+.vw-hero__desc {
   font-size: 17px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.6);
   max-width: 560px;
 }
 
-.workshops-hero__badges {
+.vw-hero__badges {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.workshops-hero__badge {
+.vw-hero__badge {
   font-size: 13px;
   font-weight: 600;
   color: var(--white);
@@ -66,7 +61,7 @@
   border-radius: 99px;
 }
 
-.workshops-hero__cta {
+.vw-hero__cta {
   display: inline-flex;
   align-items: center;
   background: var(--purple);
@@ -79,27 +74,40 @@
   margin-top: 4px;
 }
 
-.workshops-hero__cta:hover {
+.vw-hero__cta:hover {
   background: var(--purple-light);
   transform: translateY(-1px);
 }
 
+.vw-hero__img-wrapper {
+  width: 100%;
+  height: 260px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.vw-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @media (min-width: 900px) {
-  .workshops-hero {
+  .vw-hero {
     padding: 96px 24px;
   }
 
-  .workshops-hero__container {
+  .vw-hero__container {
     flex-direction: row;
     align-items: center;
     gap: 64px;
   }
 
-  .workshops-hero__content {
+  .vw-hero__content {
     flex: 1;
   }
 
-  .workshops-hero__img-wrapper {
+  .vw-hero__img-wrapper {
     flex: 1;
     height: 360px;
   }

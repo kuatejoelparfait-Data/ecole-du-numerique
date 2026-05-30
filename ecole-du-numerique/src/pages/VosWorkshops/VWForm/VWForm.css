@@ -1,0 +1,170 @@
+.vw-form {
+  background: var(--dark);
+  padding: 80px 24px;
+}
+
+.vw-form__container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.vw-form__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.vw-form__title {
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.vw-form__accent {
+  color: var(--purple-light);
+}
+
+.vw-form__subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Form layout */
+.vw-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vw-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  .vw-form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vw-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vw-form__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.vw-form__input,
+.vw-form__textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vw-form__input::placeholder,
+.vw-form__textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.vw-form__input:focus,
+.vw-form__textarea:focus {
+  border-color: var(--purple-light);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.vw-form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.vw-form__select option {
+  background: #1a1030;
+  color: #fff;
+}
+
+.vw-form__textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.vw-form__error {
+  font-size: 0.9rem;
+  color: #f87171;
+  text-align: center;
+}
+
+.vw-form__submit {
+  background: var(--purple);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.vw-form__submit:hover:not(:disabled) {
+  background: var(--purple-light);
+  transform: translateY(-1px);
+}
+
+.vw-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success state */
+.vw-form__success {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vw-form__success-icon {
+  font-size: 3rem;
+  color: #4ade80;
+}
+
+.vw-form__success-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.vw-form__success-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 440px;
+  line-height: 1.6;
+}

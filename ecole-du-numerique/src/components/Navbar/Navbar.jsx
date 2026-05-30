@@ -5,8 +5,8 @@ import './Navbar.css'
 const navLinks = [
   { label: 'Formations Particuliers', href: '/formations-particuliers' },
   { label: 'Formations Entreprises',  href: '/formations-entreprises' },
-  { label: 'Évènements',              href: '/evenements' },
-  { label: 'Workshops',               href: '/workshops' },
+  { label: 'Nos Évènements',          href: '/evenements' },
+  { label: 'Vos Workshops',           href: '/workshops' },
   { label: 'Devenir Partenaire',      href: '/partenaires' },
   { label: 'Pricing',                 href: '/pricing' },
 ]
