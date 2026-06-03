@@ -44,7 +44,6 @@ const tabGroups = {
         'IA avec Amazon Web Services',
         'IA avec Microsoft Azure',
         'Machine Learning et Big Data avec Apache Spark',
-        'Parcours certifiants',
       ],
     },
   ],
