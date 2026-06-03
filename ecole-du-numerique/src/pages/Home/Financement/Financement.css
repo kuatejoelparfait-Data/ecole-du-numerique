@@ -57,6 +57,7 @@
   padding: 10px 24px;
   border-radius: 99px;
   width: fit-content;
+  align-self: center;
   transition: background 0.2s, transform 0.2s;
   white-space: nowrap;
 }
