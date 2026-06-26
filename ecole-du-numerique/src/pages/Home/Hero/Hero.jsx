@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="hero__visual">
           <div className="hero__image-wrapper">
             <img
-              src="/assets/images/home/classroom-ia-3.webp"
+              src="/assets/images/home/classroom-ia-3.png"
               alt="Apprenants en formation Tech & IA"
               className="hero__image"
               width="600"
