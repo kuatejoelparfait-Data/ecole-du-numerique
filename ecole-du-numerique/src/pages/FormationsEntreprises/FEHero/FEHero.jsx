@@ -10,7 +10,7 @@ export default function FEHero() {
             Formez vos équipes aux <span className="fe-hero__accent">compétences digitales</span> de demain
           </h1>
           <p className="fe-hero__subtitle">
-            Des formations sur mesure en IA, cybersécurité, no-code et gestion de projet — adaptées à votre secteur et finançables jusqu'à 80%.
+            Des formations sur mesure en IA, cybersécurité, développement logiciel, web, no-code et gestion de projet — adaptées à votre secteur et finançables jusqu'à 80%.
           </p>
           <div className="fe-hero__badges">
             <span className="fe-hero__badge">✓ Financement Bruxelles-Capitale</span>

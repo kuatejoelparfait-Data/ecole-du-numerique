@@ -18,7 +18,7 @@ const themes = [
   },
   {
     icon: 'code',
-    title: 'Développement & No-Code',
+    title: 'Développement Web, Logiciel & No-Code',
     desc: 'Créer des outils internes, automatiser des tâches et gagner en autonomie sans coder.',
   },
   {

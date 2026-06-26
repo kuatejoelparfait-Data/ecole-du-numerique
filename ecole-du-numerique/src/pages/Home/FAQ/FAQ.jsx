@@ -4,7 +4,7 @@ import './FAQ.css'
 const faqs = [
   {
     question: "À qui s'adressent nos formations ?",
-    answer: "Nos formations sont destinées aux entrepreneurs, salariés, indépendants et demandeurs d'emploi qui souhaitent acquérir des compétences concrètes en IA, en cybersécurité, en développement no-code ou en marketing digital.",
+    answer: "Nos formations sont destinées aux entrepreneurs, salariés, indépendants et demandeurs d'emploi qui souhaitent acquérir des compétences concrètes en IA, en cybersécurité, en développement web, logiciel, no-code ou en marketing digital.",
   },
   {
     question: "Faut-il avoir des connaissances techniques pour suivre nos bootcamps ?",

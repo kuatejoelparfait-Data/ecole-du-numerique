@@ -15,7 +15,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__desc">
-            Bootcamps en développement web, no-code, data et IA,
+            Bootcamps en développement web, logiciel et no-code, ingénierie logicielle, data et IA,
             cybersécurité et marketing digital.
           </p>
 

@@ -5,7 +5,7 @@ import './FECategories.css'
 
 const categoryMeta = [
   { id: 'Intelligence Artificielle & Data',  label: 'Intelligence Artificielle & Data',  icon: 'smart_toy', image: '/assets/images/formations-entreprises/ia-data/hero-ia.webp'                      },
-  { id: 'Développement Web & No-Code',       label: 'Développement Web & No-Code',       icon: 'code',      image: '/assets/images/formations-entreprises/dev-no-code/laptop-freepik.webp'         },
+  { id: 'Développement Web & No-Code',       label: 'Développement Web, Logiciel & No-Code',       icon: 'code',      image: '/assets/images/formations-entreprises/dev-no-code/laptop-freepik.webp'         },
   { id: 'Cybersécurité & Protection',        label: 'Cybersécurité & Protection',        icon: 'shield',    image: '/assets/images/formations-entreprises/cybersecurite/hero-pexels.webp'          },
   { id: 'Marketing Digital & Gestion de Projet', label: 'Marketing Digital & Gestion de Projet', icon: 'task_alt', image: '/assets/images/formations-entreprises/gestion-projet-methode/hero-pexels.webp' },
 ]
@@ -71,14 +71,14 @@ const tabGroups = {
       ],
     },
   ],
-  'Développement Web & No-Code': [
+  'Développement Web, Logiciel & No-Code': [
     {
       name: 'Débuter dans la création web',
       icon: 'web',
       totalCount: null,
       subgroups: [
         'Construire un site web : mise en pratique',
-        'IA et outils no-code',
+        'IA, développement logiciel et no-code',
         'Initiation à Dreamweaver',
       ],
     },

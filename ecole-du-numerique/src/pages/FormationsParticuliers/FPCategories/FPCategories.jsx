@@ -5,7 +5,7 @@ import './FPCategories.css'
 
 const categoryMeta = [
   { id: 'Intelligence Artificielle & Data',    label: 'Intelligence Artificielle & Data',    icon: 'smart_toy',   image: '/assets/images/formations-particuliers/ia-data/hero-ia.webp'                          },
-  { id: 'Développement Web & No-Code',         label: 'Développement Web & No-Code',         icon: 'code',        image: '/assets/images/formations-particuliers/dev-no-code/developer-ia.webp'              },
+  { id: 'Développement Web & No-Code',         label: 'Développement Web, Logiciel & No-Code',         icon: 'code',        image: '/assets/images/formations-particuliers/dev-no-code/developer-ia.webp'              },
   { id: 'Marketing Digital & SEO',             label: 'Marketing Digital & SEO',             icon: 'trending_up', image: '/assets/images/formations-particuliers/marketing-digital-seo/hero-ia.webp'          },
   { id: 'Réseaux Sociaux & Communication',     label: 'Réseaux Sociaux & Communication',     icon: 'share',       image: '/assets/images/formations-particuliers/reseau-communication/hero-freepik.webp'     },
   { id: 'Design & Expérience Utilisateur',     label: 'Design & Expérience Utilisateur',     icon: 'palette',     image: '/assets/images/formations-particuliers/design-ux/wireframe-pexels.webp'             },
@@ -18,7 +18,7 @@ const categoryImages = {
     '/assets/images/formations-particuliers/ia-data/hero-ia.webp',
     '/assets/images/formations-particuliers/ia-data/hero-dc-studio.webp',
   ],
-  'Développement Web & No-Code': [
+  'Développement Web, Logiciel & No-Code': [
     '/assets/images/formations-particuliers/dev-no-code/laptop-freepik.webp',
     '/assets/images/formations-particuliers/dev-no-code/developer-ia.webp',
   ],

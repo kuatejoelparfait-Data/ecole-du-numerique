@@ -9,7 +9,7 @@ const reasons = [
   {
     icon: 'autorenew',
     title: 'Automatisez vos processus',
-    desc: 'Identifiez et automatisez les tâches répétitives grâce à l\'IA et aux outils no-code, pour libérer du temps sur ce qui compte.',
+    desc: 'Identifiez et automatisez les tâches répétitives grâce à l\'IA, aux outils de développement logiciel et no-code, pour libérer du temps sur ce qui compte.',
   },
   {
     icon: 'event_available',

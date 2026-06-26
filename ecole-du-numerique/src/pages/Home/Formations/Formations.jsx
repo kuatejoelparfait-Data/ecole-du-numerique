@@ -10,7 +10,7 @@ const particuliers = [
   },
   {
     icon:  'code',
-    title: 'Développement Web & No-code',
+    title: 'Développement Web, Logiciel & No-Code',
     count: 8,
     image: '/assets/images/formations-particuliers/dev-no-code/developer-ia.webp',
   },
@@ -43,7 +43,7 @@ const entreprises = [
   },
   {
     icon:  'code',
-    title: 'Développement Web & No-Code',
+    title: 'Développement Web, Logiciel & No-Code',
     count: 3,
     image: '/assets/images/formations-entreprises/dev-no-code/laptop-freepik.webp',
   },

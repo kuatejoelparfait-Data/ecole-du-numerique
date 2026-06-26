@@ -5,7 +5,7 @@ const audiences = [
     image:   '/assets/images/formations-particuliers/hero-zinkevych.webp',
     tag:     'Particuliers',
     title:   'Vous formez, à votre rythme',
-    desc:    "Des formations simples, concrètes et motivantes pour découvrir l'IA, le digital et le no-code. Que vous soyez étudiant, indépendant ou en reconversion, vous apprendrez à utiliser les bons outils, développer de nouvelles compétences et gagner en autonomie dans votre vie professionnelle.",
+    desc:    "Des formations simples, concrètes et motivantes pour découvrir l'IA, le développement web, logiciel et no-code. Que vous soyez étudiant, indépendant ou en reconversion, vous apprendrez à utiliser les bons outils, développer de nouvelles compétences et gagner en autonomie dans votre vie professionnelle.",
     cta:     'Voir les formations particuliers',
     href:    '/formations-particuliers',
   },
