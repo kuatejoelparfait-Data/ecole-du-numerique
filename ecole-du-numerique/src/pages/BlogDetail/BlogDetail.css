@@ -198,7 +198,7 @@
   flex-direction: column;
   gap: 10px;
   background: var(--purple-glow);
-  border: 1px solid rgba(123, 47, 255, 0.2);
+  border: 1px solid rgba(2, 175, 132, 0.2);
   border-radius: var(--radius);
   padding: 20px 24px;
 }
@@ -351,7 +351,7 @@
   font-weight: 600;
   color: var(--purple);
   background: var(--purple-glow);
-  border: 1px solid rgba(123, 47, 255, 0.2);
+  border: 1px solid rgba(2, 175, 132, 0.2);
   border-radius: 99px;
   padding: 4px 12px;
 }

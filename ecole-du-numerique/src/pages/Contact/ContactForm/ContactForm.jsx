@@ -1,129 +1,33 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import './ContactForm.css'
 
-const FORMSPREE_URLS = [
-  'https://formspree.io/f/xaqvbeky',
-  'https://formspree.io/f/mqenlqaz',
-]
-
 export default function ContactForm() {
-  const [status, setStatus] = useState('idle')
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const results = await Promise.all(
-        FORMSPREE_URLS.map(url => fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(form),
-        }))
-      )
-      if (results.every(r => r.ok)) {
-        setStatus('success')
-        setForm({ name: '', email: '', subject: '', message: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
-  }
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://tally.so/widgets/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => document.body.removeChild(script)
+  }, [])
 
   return (
     <section id="contact-form" className="contact">
       <div className="contact__container">
 
-        <div className="contact__form-wrapper">
+        <div className="contact__form-wrapper contact__tally-wrapper">
           <h2 className="contact__form-title">Envoyer un message</h2>
-
-          {status === 'success' ? (
-            <div className="contact__success">
-              <span className="material-symbols-rounded">check_circle</span>
-              <p>Message envoyé ! Nous vous répondrons dans les 24h.</p>
-            </div>
-          ) : (
-            <form className="contact__form" onSubmit={handleSubmit} noValidate>
-              <div className="contact__row">
-                <div className="contact__field">
-                  <label className="contact__label" htmlFor="name">Nom complet</label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    className="contact__input"
-                    placeholder="Votre nom et prénom"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="contact__field">
-                  <label className="contact__label" htmlFor="email">Email</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    className="contact__input"
-                    placeholder="Votre e-mail"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="contact__field">
-                <label className="contact__label" htmlFor="subject">Sujet</label>
-                <select
-                  id="subject"
-                  name="subject"
-                  className="contact__input contact__select"
-                  value={form.subject}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Choisissez un sujet</option>
-                  <option value="Formation particulier">Formation particulier</option>
-                  <option value="Formation entreprise">Formation entreprise</option>
-                  <option value="Événement">Événement</option>
-                  <option value="Workshop">Workshop</option>
-                  <option value="Candidature">Candidature / Rejoindre l'équipe</option>
-                  <option value="Partenariat">Partenariat</option>
-                  <option value="Pricing">Pricing</option>
-                  <option value="Autre">Autre</option>
-                </select>
-              </div>
-
-              <div className="contact__field">
-                <label className="contact__label" htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="contact__input contact__textarea"
-                  placeholder="Votre message"
-                  rows={6}
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              {status === 'error' && (
-                <p className="contact__error">Une erreur est survenue. Veuillez réessayer.</p>
-              )}
-
-              <button type="submit" className="contact__submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Envoi en cours…' : 'Envoyer le message'}
-              </button>
-            </form>
-          )}
+          <iframe
+            data-tally-src="https://tally.so/embed/A702yl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="500"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+            title="Formulaire de contact"
+            className="contact__tally-iframe"
+          />
+          <div className="contact__tally-mask" aria-hidden="true" />
         </div>
 
         <aside className="contact__info">

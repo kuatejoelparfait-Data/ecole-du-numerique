@@ -23,6 +23,31 @@
   gap: 24px;
 }
 
+.contact__tally-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 32px 16px;
+}
+
+.contact__tally-iframe {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+/* Noie le badge "Créé avec Tally" */
+.contact__tally-mask {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  height: 80px;
+  background: linear-gradient(to right, transparent, #FFFFFF 40%);
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 0 0 var(--radius-lg) 0;
+}
+
 .contact__form-title {
   font-size: 22px;
   font-weight: 700;

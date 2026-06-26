@@ -18,8 +18,8 @@ const avantages = [
   },
   {
     icon: 'handshake',
-    title: 'Impact territorial',
-    desc: 'Contribuez activement au développement des compétences numériques en Région de Bruxelles-Capitale.',
+    title: 'Impact concret',
+    desc: 'Contribuez activement au développement des compétences numériques auprès d\'apprenants partout en Europe.',
   },
   {
     icon: 'person_play',

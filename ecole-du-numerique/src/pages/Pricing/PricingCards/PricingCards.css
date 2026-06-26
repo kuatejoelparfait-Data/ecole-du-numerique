@@ -31,13 +31,13 @@
 
 /* Violet signature */
 .pricing-card--violet {
-  background: #7B2FFF;
+  background: #02AF84;
   border: none;
 }
 
 /* Bleu formations entreprises */
 .pricing-card--blue {
-  background: #3b1fa3;
+  background: #02AF84;
   border: none;
 }
 
@@ -66,8 +66,8 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: #fff;
-  color: #3b1fa3;
-  border: 1.5px solid #3b1fa3;
+  color: #02AF84;
+  border: 1.5px solid #02AF84;
   padding: 4px 16px;
   border-radius: 99px;
   white-space: nowrap;
@@ -154,6 +154,17 @@
 .pricing-card--violet .pricing-card__on-demand,
 .pricing-card--blue .pricing-card__on-demand  { color: #fff; }
 .pricing-card--white .pricing-card__on-demand { color: var(--dark); }
+
+/* Suffix "/ mois · contrat annuel" */
+.pricing-card__suffix {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.pricing-card--violet .pricing-card__suffix,
+.pricing-card--blue .pricing-card__suffix  { color: rgba(255,255,255,0.6); }
+.pricing-card--white .pricing-card__suffix { color: var(--text-muted); }
 
 /* Desc */
 .pricing-card__desc {

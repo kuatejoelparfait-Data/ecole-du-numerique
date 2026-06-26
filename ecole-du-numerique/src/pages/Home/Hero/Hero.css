@@ -42,14 +42,14 @@
   text-transform: uppercase;
   color: var(--purple-light);
   background: var(--purple-glow);
-  border: 1px solid rgba(123,47,255,0.3);
+  border: 1px solid rgba(2,175,132,0.3);
   padding: 6px 14px;
   border-radius: 99px;
   width: fit-content;
 }
 
 .hero__title {
-  font-size: 36px;
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 800;
   line-height: 1.1;
   color: var(--white);
@@ -164,7 +164,7 @@
   align-items: center;
   gap: 10px;
   background: var(--dark-2);
-  border: 1px solid rgba(123,47,255,0.3);
+  border: 1px solid rgba(2,175,132,0.3);
   border-radius: var(--radius);
   padding: 12px 18px;
   font-size: 12px;
@@ -198,7 +198,7 @@
   }
 
   .hero__title {
-    font-size: clamp(36px, 4.5vw, 56px);
+    font-size: clamp(28px, 4vw, 52px);
   }
 
   .hero__visual {

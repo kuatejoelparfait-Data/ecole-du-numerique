@@ -50,21 +50,21 @@
 }
 
 .vw-themes__card:hover {
-  box-shadow: 0 4px 20px rgba(123, 47, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(2, 175, 132, 0.1);
   transform: translateY(-2px);
 }
 
 .vw-themes__card--highlight {
   border: 2px dashed var(--purple);
-  background: rgba(123, 47, 255, 0.03);
+  background: rgba(2, 175, 132, 0.03);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
 
 .vw-themes__card--highlight:hover {
-  background: rgba(123, 47, 255, 0.07);
-  box-shadow: 0 4px 20px rgba(123, 47, 255, 0.15);
+  background: rgba(2, 175, 132, 0.07);
+  box-shadow: 0 4px 20px rgba(2, 175, 132, 0.15);
   transform: translateY(-2px);
 }
 

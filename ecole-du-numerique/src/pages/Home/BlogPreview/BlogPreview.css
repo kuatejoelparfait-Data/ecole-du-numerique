@@ -61,7 +61,7 @@
 }
 
 .blog-preview__card:hover {
-  box-shadow: 0 8px 30px rgba(123, 47, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(2, 175, 132, 0.5);
   transform: translateY(-4px);
 }
 

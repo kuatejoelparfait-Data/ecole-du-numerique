@@ -1,16 +1,22 @@
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
-const footerLinks = [
-  { label: 'Formations Particuliers',      href: '/formations-particuliers' },
-  { label: 'Formations Entreprises',       href: '/formations-entreprises' },
-  { label: 'Nos Évènements',               href: '/evenements' },
-  { label: 'Vos Workshops',               href: '/workshops' },
-  { label: 'Devenir Partenaire',           href: '/partenaires' },
-  { label: 'Blog',                         href: '/blog' },
-  { label: 'Pricing',                      href: '/pricing' },
-  { label: 'À propos de nous',             href: '/a-propos' },
-  { label: 'Contact',                      href: '/contact' },
+const formationsLinks = [
+  { label: 'Formations Particuliers', href: '/formations-particuliers' },
+  { label: 'Formations Entreprises',  href: '/formations-entreprises' },
+  { label: 'Nos Évènements',          href: '/evenements' },
+  { label: 'Vos Workshops',           href: '/workshops' },
+  { label: 'Pricing',                 href: '/pricing' },
+]
+
+const companyLinks = [
+  { label: 'À propos de nous',    href: '/a-propos' },
+  { label: 'Devenir Partenaire',  href: '/partenaires' },
+  { label: 'Blog',                href: '/blog' },
+  { label: 'Contact',             href: '/contact' },
+]
+
+const legalLinks = [
   { label: 'Politique de remboursements',  href: '/remboursements' },
   { label: 'Politique de confidentialité', href: '/confidentialite' },
 ]
@@ -39,13 +45,10 @@ export default function Footer() {
               loading="lazy"
             />
           </Link>
-
           <p className="footer__desc">
-            Nous proposons des formations sur mesure, spécialement conçues pour les
-            indépendants et les professionnels désireux d'améliorer leurs compétences
-            et de se démarquer dans un monde en constante évolution technologique.
+            Formations sur mesure pour indépendants et professionnels en Belgique, France et Europe.
+            Développez vos compétences numériques avec des experts du terrain.
           </p>
-
           <a
             href="https://www.linkedin.com/company/ecole-du-num%C3%A9rique/"
             target="_blank"
@@ -57,17 +60,41 @@ export default function Footer() {
           </a>
         </div>
 
-        <nav className="footer__nav" aria-label="Liens du footer">
-          <h3 className="footer__nav-title">Navigation</h3>
+        <nav className="footer__nav" aria-label="Formations">
+          <h3 className="footer__nav-title">Formations</h3>
           <ul>
-            {footerLinks.map(link => (
+            {formationsLinks.map(link => (
               <li key={link.href}>
-                <Link to={link.href} className="footer__nav-link">
-                  {link.label}
-                </Link>
+                <Link to={link.href} className="footer__nav-link">{link.label}</Link>
               </li>
             ))}
           </ul>
+        </nav>
+
+        <nav className="footer__nav" aria-label="Entreprise">
+          <h3 className="footer__nav-title">Entreprise</h3>
+          <ul>
+            {companyLinks.map(link => (
+              <li key={link.href}>
+                <Link to={link.href} className="footer__nav-link">{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav className="footer__nav" aria-label="Légal">
+          <h3 className="footer__nav-title">Légal</h3>
+          <ul>
+            {legalLinks.map(link => (
+              <li key={link.href}>
+                <Link to={link.href} className="footer__nav-link">{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+          <div className="footer__contact-info">
+            <p>contact@ecolendumerique.be</p>
+            <p>Belgique · France · Europe</p>
+          </div>
         </nav>
 
       </div>

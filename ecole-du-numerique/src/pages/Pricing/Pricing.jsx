@@ -1,4 +1,3 @@
-import Wave from '../../components/Dividers/Wave'
 import PricingHero from './PricingHero/PricingHero'
 import PricingCards from './PricingCards/PricingCards'
 import PricingFinancement from './PricingFinancement/PricingFinancement'
@@ -12,7 +11,6 @@ export default function Pricing() {
       <PricingCards />
       <PricingFinancement />
       <PricingFAQ />
-      <Wave top="#F8F7FC" bottom="#4c1d95" />
       <PricingCTA />
     </>
   )

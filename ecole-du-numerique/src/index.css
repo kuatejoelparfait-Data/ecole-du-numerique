@@ -1,35 +1,47 @@
 /* ============================================================
    Variables globales & Reset — Ecole Du Numérique
+   Charte : Digital Precision
    ============================================================ */
 
 :root {
-  /* Brand */
-  --purple:       #7B2FFF;
-  --purple-light: #9B5FFF;
-  --purple-glow:  rgba(123, 47, 255, 0.15);
-  --dark:         #0D0B1A;
-  --dark-2:       #1A1530;
+  /* ── Brand (Tech Green / Deep Slate) ── */
+  --purple:       #02AF84;
+  --purple-light: #54DDAF;
+  --purple-glow:  rgba(2,175,132,0.12);
+  --dark:         #1C262B;
+  --dark-2:       #263035;
 
-  /* Neutrals */
+  /* ── Neutrals ── */
   --white:        #FFFFFF;
-  --gray-light:   #F8F7FC;
-  --border:       #E5E7EB;
-  --text:         #1A1A2E;
-  --text-muted:   #6B7280;
+  --surface:      #f7faf9;
+  --gray-light:   #f1f4f3;
+  --border:       #bbcac1;
+  --text:         #181c1c;
+  --text-muted:   #3c4a43;
 
-  /* Shapes & effects */
-  --radius-sm:  8px;
-  --radius:     12px;
-  --radius-lg:  24px;
-  --shadow:     0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
-  --shadow-lg:  0 20px 40px rgba(0,0,0,0.12);
-  --container:  1200px;
+  /* ── Semantic ── */
+  --error:        #ba1a1a;
+  --tech-green:   #02AF84;
+  --deep-slate:   #1C262B;
 
-  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  /* ── Shapes ── */
+  --radius-sm:  4px;
+  --radius:     8px;
+  --radius-lg:  12px;
+
+  /* ── Shadows ── */
+  --shadow:     0px 4px 16px rgba(28,38,43,0.06);
+  --shadow-lg:  0px 12px 32px rgba(28,38,43,0.08);
+
+  /* ── Layout ── */
+  --container:  1280px;
+
+  /* ── Typography ── */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
-  background: var(--white);
+  background: var(--surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,8 +49,16 @@
 /* ── Reset ──────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 body       { margin: 0; }
-h1,h2,h3,
-h4,h5,h6   { margin: 0; font-weight: 700; line-height: 1.2; color: var(--text); }
+
+h1, h2, h3,
+h4, h5, h6 {
+  margin: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
 p          { margin: 0; }
 a          { text-decoration: none; color: inherit; }
 ul         { list-style: none; margin: 0; padding: 0; }

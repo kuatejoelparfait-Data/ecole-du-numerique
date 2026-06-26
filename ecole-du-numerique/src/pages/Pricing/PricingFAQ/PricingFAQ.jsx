@@ -3,6 +3,10 @@ import './PricingFAQ.css'
 
 const faqs = [
   {
+    question: "Que signifie « / mois · contrat annuel » ?",
+    answer: "Les tarifs affichés correspondent au prix mensuel dans le cadre d'un engagement annuel. La facturation peut s'effectuer mensuellement ou annuellement selon votre préférence. Un contrat annuel vous garantit un tarif fixe sur 12 mois sans surprise.",
+  },
+  {
     question: "Comment sont calculés vos tarifs ?",
     answer: "Les tarifs affichés sont des prix de départ. Le coût final dépend de la formation choisie, de sa durée et du nombre de participants. Contactez-nous pour recevoir un devis personnalisé sous 48h.",
   },

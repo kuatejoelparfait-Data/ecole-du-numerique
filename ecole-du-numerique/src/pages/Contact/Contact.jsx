@@ -1,6 +1,5 @@
 import ContactHero from './ContactHero/ContactHero'
 import ContactForm from './ContactForm/ContactForm'
-import ContactBrands from './ContactBrands/ContactBrands'
 import ContactFAQ from './ContactFAQ/ContactFAQ'
 
 export default function Contact() {
@@ -8,7 +7,6 @@ export default function Contact() {
     <>
       <ContactHero />
       <ContactForm />
-      <ContactBrands />
       <ContactFAQ />
     </>
   )

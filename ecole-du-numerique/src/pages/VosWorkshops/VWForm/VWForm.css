@@ -138,6 +138,35 @@
   cursor: not-allowed;
 }
 
+/* Tally embed */
+.vw-form__tally-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px 32px 16px;
+}
+
+.vw-form__iframe {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+/* Noie le badge "Créé avec Tally" dans le fond sombre */
+.vw-form__tally-mask {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  height: 78px;
+  background: linear-gradient(to right, transparent, #1C262B 40%);
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 0 0 16px 0;
+}
+
 /* Success state */
 .vw-form__success {
   text-align: center;

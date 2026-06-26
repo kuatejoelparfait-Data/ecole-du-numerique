@@ -30,7 +30,7 @@ export default function Hero() {
             <div className="hero__avatars">
               <div className="hero__avatar" style={{ background: '#a78bfa' }}>A</div>
               <div className="hero__avatar" style={{ background: '#818cf8' }}>M</div>
-              <div className="hero__avatar" style={{ background: '#7B2FFF' }}>J</div>
+              <div className="hero__avatar" style={{ background: '#02AF84' }}>J</div>
               <div className="hero__avatar" style={{ background: '#6d28d9' }}>S</div>
             </div>
             <p className="hero__social-text">

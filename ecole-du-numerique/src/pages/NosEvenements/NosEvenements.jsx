@@ -1,4 +1,3 @@
-import Wave from '../../components/Dividers/Wave'
 import EvenementsHero from './EvenementsHero/EvenementsHero'
 import EvenementsWhy from './EvenementsWhy/EvenementsWhy'
 import NEGrid from './NEGrid/NEGrid'
@@ -14,7 +13,6 @@ export default function NosEvenements() {
       <NEGrid />
       <EvenementsTestimonials />
       <EvenementsFAQ />
-      <Wave top="#F8F7FC" bottom="#4c1d95" />
       <EvenementsCTA />
     </>
   )

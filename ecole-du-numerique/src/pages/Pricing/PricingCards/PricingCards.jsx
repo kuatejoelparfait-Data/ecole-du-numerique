@@ -9,6 +9,7 @@ const plans = [
     price: '400',
     currency: '€',
     pricePrefix: 'À partir de',
+    priceSuffix: '/ mois · contrat annuel',
     desc: 'Idéal pour les indépendants et entrepreneurs qui souhaitent monter en compétences à leur rythme.',
     features: [
       'Accès à la formation choisie',
@@ -28,6 +29,7 @@ const plans = [
     price: '1 500',
     currency: '€',
     pricePrefix: 'À partir de',
+    priceSuffix: '/ mois · contrat annuel',
     desc: 'Pour les équipes et organisations qui souhaitent former leurs collaborateurs sur mesure.',
     features: [
       'Sessions illimitées',
@@ -84,6 +86,9 @@ export default function PricingCards() {
                       <span className="pricing-card__amount">
                         {plan.price}<span className="pricing-card__currency">{plan.currency}</span>
                       </span>
+                      {plan.priceSuffix && (
+                        <span className="pricing-card__suffix">{plan.priceSuffix}</span>
+                      )}
                     </>
                   ) : (
                     <span className="pricing-card__on-demand">{plan.priceLabel}</span>
