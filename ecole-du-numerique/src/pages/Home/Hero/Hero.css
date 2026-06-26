@@ -1,5 +1,5 @@
 .hero {
-  background: var(--dark);
+  background: var(--dark) url('/assets/images/home/hero-bg.png') center center / cover no-repeat;
   padding: 64px 24px 80px;
   overflow: hidden;
   position: relative;

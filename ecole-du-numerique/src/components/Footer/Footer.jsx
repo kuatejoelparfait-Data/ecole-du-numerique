@@ -37,11 +37,11 @@ export default function Footer() {
         <div className="footer__brand">
           <Link to="/" className="footer__logo">
             <img
-              src="/assets/images/logo-footer.webp"
+              src="/assets/images/logo-footer2.png"
               alt="Ecole Du Numérique"
               className="footer__logo-img"
-              width="240"
-              height="120"
+              width="200"
+              height="80"
               loading="lazy"
             />
           </Link>

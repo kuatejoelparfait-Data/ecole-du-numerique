@@ -20,7 +20,7 @@ export default function Navbar() {
 
         <Link to="/" className="navbar__logo">
           <img
-            src="/assets/images/logo.webp"
+            src="/assets/images/logo.png"
             alt="Ecole Du Numérique"
             className="navbar__logo-img"
             width="160"
