@@ -102,12 +102,32 @@ export default function FormationEntrepriseDetail() {
                 </>
               )}
 
-              {formation.price && (
-                <>
-                  <p className="fed-content__card-label">Tarif</p>
-                  <p className="fed-content__card-price">{formation.price}</p>
-                </>
-              )}
+              <p className="fed-content__card-label">Formation complète · 2 jours</p>
+              <div className="fed-content__tarifs">
+                <div className="fed-content__tarif-row">
+                  <span className="material-symbols-rounded fed-content__tarif-icon">groups</span>
+                  <div>
+                    <p className="fed-content__tarif-label">Inter-entreprises</p>
+                    <p className="fed-content__tarif-price">690–790 € <span className="fed-content__tarif-tax">HTVA</span></p>
+                    <p className="fed-content__tarif-unit">par participant</p>
+                  </div>
+                </div>
+                <div className="fed-content__tarif-row fed-content__tarif-row--accent">
+                  <span className="material-symbols-rounded fed-content__tarif-icon">corporate_fare</span>
+                  <div>
+                    <p className="fed-content__tarif-label">Intra-entreprise</p>
+                    <p className="fed-content__tarif-price">2 400–2 900 € <span className="fed-content__tarif-tax">HTVA</span></p>
+                    <p className="fed-content__tarif-unit">par groupe · jusqu'à 8 pers.</p>
+                  </div>
+                </div>
+                <div className="fed-content__tarif-row">
+                  <span className="material-symbols-rounded fed-content__tarif-icon">tune</span>
+                  <div>
+                    <p className="fed-content__tarif-label">Sur mesure</p>
+                    <p className="fed-content__tarif-price">à partir de 3 500 € <span className="fed-content__tarif-tax">HTVA</span></p>
+                  </div>
+                </div>
+              </div>
 
               {formation.options && formation.options.length > 0 && (
                 <>

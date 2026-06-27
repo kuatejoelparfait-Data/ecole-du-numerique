@@ -271,3 +271,53 @@
     top: 96px;
   }
 }
+
+/* ── Tarifs dans la sidebar ─────────────── */
+.fd-content__tarifs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.fd-content__tarif-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.fd-content__tarif-row--accent {
+  background: var(--purple-glow);
+  border-color: var(--purple);
+}
+
+.fd-content__tarif-icon {
+  font-size: 18px;
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+.fd-content__tarif-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.fd-content__tarif-price {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+}
+
+.fd-content__tarif-tax {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--purple);
+}

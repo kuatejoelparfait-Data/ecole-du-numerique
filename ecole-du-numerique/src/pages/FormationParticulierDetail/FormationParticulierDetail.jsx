@@ -77,12 +77,30 @@ export default function FormationParticulierDetail() {
 
           <aside className="fd-content__aside">
             <div className="fd-content__card">
-              <p className="fd-content__card-label">Tarif</p>
-              <p className="fd-content__card-price">à partir de 400 €</p>
-              <p className="fd-content__card-label">Niveau</p>
+              <p className="fd-content__card-label">Formation complète · 2 jours</p>
+
+              <div className="fd-content__tarifs">
+                <div className="fd-content__tarif-row">
+                  <span className="material-symbols-rounded fd-content__tarif-icon">laptop</span>
+                  <div>
+                    <p className="fd-content__tarif-label">En ligne</p>
+                    <p className="fd-content__tarif-price">590 € <span className="fd-content__tarif-tax">TTC</span></p>
+                  </div>
+                </div>
+                <div className="fd-content__tarif-row fd-content__tarif-row--accent">
+                  <span className="material-symbols-rounded fd-content__tarif-icon">location_on</span>
+                  <div>
+                    <p className="fd-content__tarif-label">Présentiel</p>
+                    <p className="fd-content__tarif-price">690 € <span className="fd-content__tarif-tax">TTC</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <p className="fd-content__card-label" style={{ marginTop: '8px' }}>Niveau</p>
               <p className="fd-content__card-value">{formation.level}</p>
               <p className="fd-content__card-label">Catégorie</p>
               <p className="fd-content__card-value">{formation.category}</p>
+
               <a href="/contact" className="fd-content__cta">S'inscrire à cette formation</a>
               <a href="/contact" className="fd-content__cta-secondary">Demander des infos</a>
             </div>
