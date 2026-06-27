@@ -2,28 +2,41 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './PricingCards.css'
 
-// ── Abonnements ──────────────────────────────────────────────────────────────
+// ── Données abonnements ───────────────────────────────────────────────────────
 
 const abonnementsPart = [
   {
     name: 'Découverte',
     price: '49 €',
     unit: '/ mois TTC',
-    items: ['1 atelier collectif mensuel', 'Accès aux replays', 'Ressources & veille IA'],
+    items: [
+      '1 atelier collectif mensuel (2 h)',
+      'Accès aux replays des ateliers passés',
+      'Ressources & veille IA chaque semaine',
+    ],
   },
   {
     name: 'Pro',
     price: '149 €',
     unit: '/ mois TTC',
     highlight: true,
-    items: ['Ateliers mensuels + exercices', 'Support léger inclus', 'Réduction de 20 % sur les formations', 'Accès aux replays'],
+    items: [
+      'Ateliers mensuels thématiques + exercices',
+      'Support léger par messagerie',
+      'Réduction de 20 % sur les formations complètes',
+      'Accès aux replays de tous les ateliers',
+    ],
   },
   {
     name: 'Intensif',
     price: '290 €',
     unit: '/ mois TTC',
     note: 'Engagement 3 mois',
-    items: ['1 formation complète par mois', 'Accès communauté & ressources', 'Session Q/R mensuelle dédiée'],
+    items: [
+      '1 formation complète incluse par mois',
+      'Ateliers collectifs + communauté',
+      'Session Q/R mensuelle dédiée (1 h)',
+    ],
   },
 ]
 
@@ -32,20 +45,34 @@ const abonnementsEntr = [
     name: 'Starter',
     price: '590 €',
     unit: '/ mois HTVA',
-    items: ["Jusqu'à 3 collaborateurs", '1 atelier collectif / mois', 'Replays & veille IA'],
+    items: [
+      "Jusqu'à 3 collaborateurs",
+      '1 atelier collectif mensuel (2 h)',
+      'Replays & veille IA',
+    ],
   },
   {
     name: 'Team',
     price: '1 200 €',
     unit: '/ mois HTVA',
     highlight: true,
-    items: ["Jusqu'à 8 collaborateurs", '1 atelier privé de 2 h / mois', 'Support Q/R', 'Ressources internes'],
+    items: [
+      "Jusqu'à 8 collaborateurs",
+      '1 atelier privé de 2 h / mois',
+      'Support Q/R dédié',
+      'Ressources internes partagées',
+    ],
   },
   {
     name: 'Growth',
     price: '2 400 €',
     unit: '/ mois HTVA',
-    items: ["Jusqu'à 15 collaborateurs", '1 demi-journée privée / mois', "Accompagnement cas d'usage", 'Roadmap IA'],
+    items: [
+      "Jusqu'à 15 collaborateurs",
+      '1 demi-journée d\'atelier privé / mois',
+      "Accompagnement cas d'usage métier",
+      'Roadmap IA personnalisée',
+    ],
   },
 ]
 
@@ -76,147 +103,232 @@ function AboGrid({ plans }) {
 }
 
 export default function PricingCards() {
-  const [aboTab, setAboTab] = useState('particuliers')
+  const [tab, setTab] = useState('particuliers')
 
   return (
     <section id="pricing-cards" className="pricing-cards">
       <div className="pricing-cards__container">
 
-        {/* ── 1. PARTICULIERS ──────────────────────────────────── */}
-        <div className="pricing-block" id="particuliers">
-          <div className="pricing-block__header">
-            <span className="pricing-block__tag">Particuliers</span>
-            <h2 className="pricing-block__title">Formations pour particuliers</h2>
-            <p className="pricing-block__sub">
-              Des formations complètes de 2 jours pour apprendre concrètement les compétences Tech & IA : intelligence artificielle, automatisation, data, création de site web, cybersécurité ou marketing digital.
-            </p>
-          </div>
-          <div className="pricing-row">
-            <div className="pricing-offer">
-              <div className="pricing-offer__top">
-                <span className="material-symbols-rounded pricing-offer__icon">laptop</span>
-                <p className="pricing-offer__label">En ligne</p>
-              </div>
-              <p className="pricing-offer__price">590 € <span className="pricing-offer__tax">TTC</span></p>
-              <p className="pricing-offer__unit">Formation complète 2 jours</p>
-            </div>
-            <div className="pricing-offer pricing-offer--accent">
-              <div className="pricing-offer__top">
-                <span className="material-symbols-rounded pricing-offer__icon">location_on</span>
-                <p className="pricing-offer__label">Présentiel</p>
-              </div>
-              <p className="pricing-offer__price">690 € <span className="pricing-offer__tax">TTC</span></p>
-              <p className="pricing-offer__unit">Formation complète 2 jours</p>
-            </div>
-          </div>
-          <p className="pricing-block__note">
-            <span className="material-symbols-rounded">info</span>
-            Le prix comprend la formation complète de 2 jours, les supports pédagogiques, les exercices pratiques et l'accompagnement pendant la session.
-          </p>
-          <Link to="/formations-particuliers" className="pricing-block__cta">S'inscrire à une formation</Link>
+        {/* ── Filtre principal ─────────────────────────────────── */}
+        <div className="pricing-tabs">
+          <button
+            className={`pricing-tabs__btn${tab === 'particuliers' ? ' pricing-tabs__btn--active' : ''}`}
+            onClick={() => setTab('particuliers')}
+          >
+            <span className="material-symbols-rounded">person</span>
+            Particuliers
+          </button>
+          <button
+            className={`pricing-tabs__btn${tab === 'entreprises' ? ' pricing-tabs__btn--active' : ''}`}
+            onClick={() => setTab('entreprises')}
+          >
+            <span className="material-symbols-rounded">business</span>
+            Entreprises
+          </button>
         </div>
 
-        {/* ── 2. INTER-ENTREPRISES ─────────────────────────────── */}
-        <div className="pricing-block pricing-block--dark" id="inter-entreprises">
-          <div className="pricing-block__header">
-            <span className="pricing-block__tag pricing-block__tag--light">Inter-entreprises</span>
-            <h2 className="pricing-block__title pricing-block__title--light">Formations inter-entreprises</h2>
-            <p className="pricing-block__sub pricing-block__sub--light">
-              Inscrivez un ou plusieurs collaborateurs à une session ouverte avec d'autres professionnels. Idéal pour former rapidement une personne ou une petite équipe sans organiser une session privée.
-            </p>
-          </div>
-          <div className="pricing-row">
-            <div className="pricing-offer pricing-offer--glass">
-              <div className="pricing-offer__top">
-                <span className="material-symbols-rounded pricing-offer__icon">laptop</span>
-                <p className="pricing-offer__label pricing-offer__label--light">En ligne</p>
+        {/* ══════════════════════════════════════════════════════ */}
+        {/* VUE PARTICULIERS                                       */}
+        {/* ══════════════════════════════════════════════════════ */}
+        {tab === 'particuliers' && (
+          <>
+            {/* 1. Abonnements ateliers EN PREMIER */}
+            <div className="pricing-abo-section">
+              <div className="pricing-abo-section__header">
+                <span className="pricing-abo-section__pretitle">Abonnements mensuels</span>
+                <h2 className="pricing-abo-section__title">Des ateliers pratiques chaque mois</h2>
+                <p className="pricing-abo-section__sub">
+                  Les abonnements donnent accès à des <strong>ateliers collectifs thématiques</strong>, pas à des formations complètes. Chaque atelier dure 2 heures et porte sur un outil ou une pratique concrète : IA, automatisation, marketing, création de contenu…
+                </p>
+                <div className="pricing-abo-section__disclaimer">
+                  <span className="material-symbols-rounded">info</span>
+                  Les abonnements <strong>ne remplacent pas</strong> les formations complètes de 2 jours. Ils s'y ajoutent pour maintenir une progression régulière.
+                </div>
               </div>
-              <p className="pricing-offer__price pricing-offer__price--light">690 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
-              <p className="pricing-offer__unit pricing-offer__unit--light">par participant · 2 jours</p>
+              <AboGrid plans={abonnementsPart} />
             </div>
-            <div className="pricing-offer pricing-offer--glass pricing-offer--glass-accent">
-              <div className="pricing-offer__top">
-                <span className="material-symbols-rounded pricing-offer__icon">location_on</span>
-                <p className="pricing-offer__label pricing-offer__label--light">Présentiel</p>
-              </div>
-              <p className="pricing-offer__price pricing-offer__price--light">790 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
-              <p className="pricing-offer__unit pricing-offer__unit--light">par participant · 2 jours</p>
-            </div>
-          </div>
-          <p className="pricing-block__note pricing-block__note--light">
-            <span className="material-symbols-rounded">info</span>
-            Tarif par participant pour une formation complète de 2 jours.
-          </p>
-          <Link to="/contact" className="pricing-block__cta pricing-block__cta--white">Demander les prochaines dates</Link>
-        </div>
 
-        {/* ── 3. INTRA-ENTREPRISE ──────────────────────────────── */}
-        <div className="pricing-block pricing-block--slate" id="intra-entreprise">
-          <div className="pricing-block__header">
-            <span className="pricing-block__tag pricing-block__tag--light">Intra-entreprise</span>
-            <h2 className="pricing-block__title pricing-block__title--light">Formations intra-entreprise</h2>
-            <p className="pricing-block__sub pricing-block__sub--light">
-              Une formation privée pour votre entreprise, adaptée au niveau de vos équipes, à vos outils et à vos objectifs opérationnels.
-            </p>
-          </div>
-          <div className="pricing-row">
-            <div className="pricing-offer pricing-offer--glass">
-              <div className="pricing-offer__top">
-                <span className="material-symbols-rounded pricing-offer__icon">laptop</span>
-                <p className="pricing-offer__label pricing-offer__label--light">En ligne</p>
+            {/* 2. Formation complète particulier */}
+            <div className="pricing-block" id="particuliers-formation">
+              <div className="pricing-block__header">
+                <span className="pricing-block__tag">Formation complète</span>
+                <h2 className="pricing-block__title">Formations pour particuliers</h2>
+                <p className="pricing-block__sub">
+                  Des formations complètes de 2 jours pour apprendre concrètement les compétences Tech & IA : intelligence artificielle, automatisation, data, création de site web, cybersécurité ou marketing digital.
+                </p>
               </div>
-              <p className="pricing-offer__price pricing-offer__price--light">2 400 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
-              <p className="pricing-offer__unit pricing-offer__unit--light">par groupe · 2 jours</p>
-            </div>
-            <div className="pricing-offer pricing-offer--glass pricing-offer--glass-accent">
-              <div className="pricing-offer__top">
-                <span className="material-symbols-rounded pricing-offer__icon">location_on</span>
-                <p className="pricing-offer__label pricing-offer__label--light">Présentiel</p>
+              <div className="pricing-row">
+                <div className="pricing-offer">
+                  <div className="pricing-offer__top">
+                    <span className="material-symbols-rounded pricing-offer__icon">laptop</span>
+                    <p className="pricing-offer__label">En ligne</p>
+                  </div>
+                  <p className="pricing-offer__price">590 € <span className="pricing-offer__tax">TTC</span></p>
+                  <p className="pricing-offer__unit">Formation complète · 2 jours</p>
+                </div>
+                <div className="pricing-offer pricing-offer--accent">
+                  <div className="pricing-offer__top">
+                    <span className="material-symbols-rounded pricing-offer__icon">location_on</span>
+                    <p className="pricing-offer__label">Présentiel</p>
+                  </div>
+                  <p className="pricing-offer__price">690 € <span className="pricing-offer__tax">TTC</span></p>
+                  <p className="pricing-offer__unit">Formation complète · 2 jours</p>
+                </div>
               </div>
-              <p className="pricing-offer__price pricing-offer__price--light">2 900 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
-              <p className="pricing-offer__unit pricing-offer__unit--light">par groupe · 2 jours</p>
+              <p className="pricing-block__note">
+                <span className="material-symbols-rounded">info</span>
+                Inclus : supports pédagogiques, exercices pratiques, accompagnement pendant la session et attestation de formation.
+              </p>
+              <Link to="/formations-particuliers" className="pricing-block__cta">Voir les formations disponibles</Link>
             </div>
-          </div>
-          <ul className="pricing-block__conditions">
-            <li><span className="material-symbols-rounded">check</span>Jusqu'à 8 participants inclus</li>
-            <li><span className="material-symbols-rounded">check</span>+150 € HTVA / participant à partir du 9e</li>
-            <li><span className="material-symbols-rounded">check</span>Adaptation légère des exemples au secteur incluse</li>
-            <li><span className="material-symbols-rounded">check</span>Formation complète de 2 jours</li>
-          </ul>
-          <Link to="/contact" className="pricing-block__cta pricing-block__cta--white">Demander un devis entreprise</Link>
-        </div>
 
-        {/* ── 4. SUR MESURE ────────────────────────────────────── */}
-        <div className="pricing-block" id="sur-mesure">
-          <div className="pricing-block__header">
-            <span className="pricing-block__tag">Sur mesure</span>
-            <h2 className="pricing-block__title">Formations sur mesure</h2>
-            <p className="pricing-block__sub">
-              Pour les entreprises qui souhaitent une formation construite autour de leurs cas d'usage réels : automatisation interne, IA métier, analyse de données, productivité, marketing, cybersécurité ou transformation digitale.
-            </p>
-          </div>
-          <div className="pricing-surmesure">
-            <div className="pricing-surmesure__price-block">
-              <p className="pricing-surmesure__from">À partir de</p>
-              <p className="pricing-surmesure__price">3 500 € <span className="pricing-surmesure__tax">HTVA</span></p>
-              <p className="pricing-surmesure__unit">/ journée</p>
+            {/* 3. Coaching */}
+            <div className="pricing-coaching">
+              <span className="material-symbols-rounded pricing-coaching__icon">support_agent</span>
+              <div className="pricing-coaching__body">
+                <p className="pricing-coaching__label">Coaching individuel</p>
+                <p className="pricing-coaching__price">150 € <span className="pricing-coaching__note">TTC / heure · minimum 2 heures</span></p>
+                <p className="pricing-coaching__desc">Accompagnement personnalisé sur votre projet, vos outils ou votre reconversion.</p>
+              </div>
+              <Link to="/contact" className="pricing-coaching__cta">Réserver</Link>
             </div>
-            <ul className="pricing-surmesure__includes">
-              <li><span className="material-symbols-rounded">check_circle</span>Analyse du besoin</li>
-              <li><span className="material-symbols-rounded">check_circle</span>Adaptation du programme</li>
-              <li><span className="material-symbols-rounded">check_circle</span>Cas pratiques liés au métier</li>
-              <li><span className="material-symbols-rounded">check_circle</span>Supports personnalisés</li>
-              <li><span className="material-symbols-rounded">check_circle</span>Recommandations opérationnelles</li>
-            </ul>
-          </div>
-          <p className="pricing-block__note">
-            <span className="material-symbols-rounded">info</span>
-            Un cadrage pédagogique peut être proposé avant la formation pour définir les objectifs, le niveau des participants et les livrables attendus.
-          </p>
-          <Link to="/contact" className="pricing-block__cta">Construire une formation sur mesure</Link>
-        </div>
+          </>
+        )}
 
-        {/* ── 5. TABLEAU RÉCAPITULATIF ─────────────────────────── */}
+        {/* ══════════════════════════════════════════════════════ */}
+        {/* VUE ENTREPRISES                                        */}
+        {/* ══════════════════════════════════════════════════════ */}
+        {tab === 'entreprises' && (
+          <>
+            {/* 1. Abonnements ateliers EN PREMIER */}
+            <div className="pricing-abo-section">
+              <div className="pricing-abo-section__header">
+                <span className="pricing-abo-section__pretitle">Abonnements mensuels</span>
+                <h2 className="pricing-abo-section__title">Des ateliers privés pour vos équipes</h2>
+                <p className="pricing-abo-section__sub">
+                  Les abonnements donnent accès à des <strong>ateliers collectifs ou privés</strong>, pas à des formations complètes. Chaque atelier porte sur un outil ou un cas d'usage métier : automatisation, IA, data, marketing digital, productivité…
+                </p>
+                <div className="pricing-abo-section__disclaimer">
+                  <span className="material-symbols-rounded">info</span>
+                  Les abonnements <strong>ne remplacent pas</strong> les formations inter ou intra-entreprise. Ils permettent un accompagnement continu entre les sessions.
+                </div>
+              </div>
+              <AboGrid plans={abonnementsEntr} />
+            </div>
+
+            {/* 2. Inter-entreprises */}
+            <div className="pricing-block pricing-block--dark" id="inter-entreprises">
+              <div className="pricing-block__header">
+                <span className="pricing-block__tag pricing-block__tag--light">Formation complète</span>
+                <h2 className="pricing-block__title pricing-block__title--light">Inter-entreprises</h2>
+                <p className="pricing-block__sub pricing-block__sub--light">
+                  Inscrivez un ou plusieurs collaborateurs à une session ouverte avec d'autres professionnels. Idéal pour former rapidement une personne ou une petite équipe.
+                </p>
+              </div>
+              <div className="pricing-row">
+                <div className="pricing-offer pricing-offer--glass">
+                  <div className="pricing-offer__top">
+                    <span className="material-symbols-rounded pricing-offer__icon">laptop</span>
+                    <p className="pricing-offer__label pricing-offer__label--light">En ligne</p>
+                  </div>
+                  <p className="pricing-offer__price pricing-offer__price--light">690 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
+                  <p className="pricing-offer__unit pricing-offer__unit--light">par participant · 2 jours</p>
+                </div>
+                <div className="pricing-offer pricing-offer--glass pricing-offer--glass-accent">
+                  <div className="pricing-offer__top">
+                    <span className="material-symbols-rounded pricing-offer__icon">location_on</span>
+                    <p className="pricing-offer__label pricing-offer__label--light">Présentiel</p>
+                  </div>
+                  <p className="pricing-offer__price pricing-offer__price--light">790 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
+                  <p className="pricing-offer__unit pricing-offer__unit--light">par participant · 2 jours</p>
+                </div>
+              </div>
+              <p className="pricing-block__note pricing-block__note--light">
+                <span className="material-symbols-rounded">info</span>
+                Tarif par participant pour une formation complète de 2 jours.
+              </p>
+              <Link to="/contact" className="pricing-block__cta pricing-block__cta--white">Demander les prochaines dates</Link>
+            </div>
+
+            {/* 3. Intra-entreprise */}
+            <div className="pricing-block pricing-block--slate" id="intra-entreprise">
+              <div className="pricing-block__header">
+                <span className="pricing-block__tag pricing-block__tag--light">Formation complète</span>
+                <h2 className="pricing-block__title pricing-block__title--light">Intra-entreprise</h2>
+                <p className="pricing-block__sub pricing-block__sub--light">
+                  Une session privée pour votre équipe, adaptée à votre niveau, vos outils et vos objectifs opérationnels.
+                </p>
+              </div>
+              <div className="pricing-row">
+                <div className="pricing-offer pricing-offer--glass">
+                  <div className="pricing-offer__top">
+                    <span className="material-symbols-rounded pricing-offer__icon">laptop</span>
+                    <p className="pricing-offer__label pricing-offer__label--light">En ligne</p>
+                  </div>
+                  <p className="pricing-offer__price pricing-offer__price--light">2 400 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
+                  <p className="pricing-offer__unit pricing-offer__unit--light">par groupe · 2 jours</p>
+                </div>
+                <div className="pricing-offer pricing-offer--glass pricing-offer--glass-accent">
+                  <div className="pricing-offer__top">
+                    <span className="material-symbols-rounded pricing-offer__icon">location_on</span>
+                    <p className="pricing-offer__label pricing-offer__label--light">Présentiel</p>
+                  </div>
+                  <p className="pricing-offer__price pricing-offer__price--light">2 900 € <span className="pricing-offer__tax pricing-offer__tax--dim">HTVA</span></p>
+                  <p className="pricing-offer__unit pricing-offer__unit--light">par groupe · 2 jours</p>
+                </div>
+              </div>
+              <ul className="pricing-block__conditions">
+                <li><span className="material-symbols-rounded">check</span>Jusqu'à 8 participants inclus</li>
+                <li><span className="material-symbols-rounded">check</span>+150 € HTVA / participant à partir du 9e</li>
+                <li><span className="material-symbols-rounded">check</span>Adaptation légère des exemples au secteur incluse</li>
+              </ul>
+              <Link to="/contact" className="pricing-block__cta pricing-block__cta--white">Demander un devis</Link>
+            </div>
+
+            {/* 4. Sur mesure */}
+            <div className="pricing-block" id="sur-mesure">
+              <div className="pricing-block__header">
+                <span className="pricing-block__tag">Sur mesure</span>
+                <h2 className="pricing-block__title">Formation sur mesure</h2>
+                <p className="pricing-block__sub">
+                  Construite autour de vos cas d'usage réels : automatisation interne, IA métier, data, cybersécurité ou transformation digitale.
+                </p>
+              </div>
+              <div className="pricing-surmesure">
+                <div className="pricing-surmesure__price-block">
+                  <p className="pricing-surmesure__from">À partir de</p>
+                  <p className="pricing-surmesure__price">3 500 € <span className="pricing-surmesure__tax">HTVA</span></p>
+                  <p className="pricing-surmesure__unit">/ journée</p>
+                </div>
+                <ul className="pricing-surmesure__includes">
+                  <li><span className="material-symbols-rounded">check_circle</span>Analyse du besoin</li>
+                  <li><span className="material-symbols-rounded">check_circle</span>Adaptation du programme</li>
+                  <li><span className="material-symbols-rounded">check_circle</span>Cas pratiques liés au métier</li>
+                  <li><span className="material-symbols-rounded">check_circle</span>Supports personnalisés</li>
+                  <li><span className="material-symbols-rounded">check_circle</span>Recommandations opérationnelles</li>
+                </ul>
+              </div>
+              <p className="pricing-block__note">
+                <span className="material-symbols-rounded">info</span>
+                Un cadrage pédagogique peut être proposé avant la formation pour définir les objectifs, le niveau des participants et les livrables attendus.
+              </p>
+              <Link to="/contact" className="pricing-block__cta">Construire une formation sur mesure</Link>
+            </div>
+
+            {/* 5. Coaching dirigeant */}
+            <div className="pricing-coaching">
+              <span className="material-symbols-rounded pricing-coaching__icon">support_agent</span>
+              <div className="pricing-coaching__body">
+                <p className="pricing-coaching__label">Coaching individuel / dirigeant</p>
+                <p className="pricing-coaching__price">150 € <span className="pricing-coaching__note">HTVA / heure · minimum 2 heures</span></p>
+                <p className="pricing-coaching__desc">Accompagnement personnalisé sur votre stratégie, vos outils ou votre transformation digitale.</p>
+              </div>
+              <Link to="/contact" className="pricing-coaching__cta">Réserver</Link>
+            </div>
+          </>
+        )}
+
+        {/* ── Tableau récap (commun) ───────────────────────────── */}
         <div className="pricing-table-wrap">
           <h2 className="pricing-table-wrap__title">Récapitulatif des tarifs</h2>
           <div className="pricing-table-scroll">
@@ -254,38 +366,6 @@ export default function PricingCards() {
           <p className="pricing-table-wrap__note">
             Les tarifs intra-entreprise sont valables jusqu'à 8 participants. Au-delà, un supplément de 150 € HTVA par participant est appliqué.
           </p>
-        </div>
-
-        {/* ── 6. ABONNEMENTS ───────────────────────────────────── */}
-        <div className="pricing-abo-section">
-          <div className="pricing-abo-section__header">
-            <h2 className="pricing-abo-section__title">Abonnements mensuels</h2>
-            <p className="pricing-abo-section__sub">
-              Un accompagnement continu pour progresser chaque mois, accéder à des ateliers, poser vos questions et rester à jour sur les outils Tech & IA. Les abonnements complètent les formations — ils ne les remplacent pas.
-            </p>
-            <div className="pricing-abo-section__toggle">
-              <button
-                className={`pricing-abo-section__btn${aboTab === 'particuliers' ? ' pricing-abo-section__btn--active' : ''}`}
-                onClick={() => setAboTab('particuliers')}
-              >Particuliers</button>
-              <button
-                className={`pricing-abo-section__btn${aboTab === 'entreprises' ? ' pricing-abo-section__btn--active' : ''}`}
-                onClick={() => setAboTab('entreprises')}
-              >Entreprises</button>
-            </div>
-          </div>
-          <AboGrid plans={aboTab === 'particuliers' ? abonnementsPart : abonnementsEntr} />
-        </div>
-
-        {/* ── COACHING ─────────────────────────────────────────── */}
-        <div className="pricing-coaching">
-          <span className="material-symbols-rounded pricing-coaching__icon">support_agent</span>
-          <div className="pricing-coaching__body">
-            <p className="pricing-coaching__label">Coaching individuel / dirigeant</p>
-            <p className="pricing-coaching__price">150 € HTVA <span className="pricing-coaching__note">/ heure · minimum 2 heures</span></p>
-            <p className="pricing-coaching__desc">Accompagnement personnalisé sur votre stratégie, vos outils ou votre transformation digitale.</p>
-          </div>
-          <Link to="/contact" className="pricing-coaching__cta">Réserver</Link>
         </div>
 
         <p className="pricing-cards__note">
