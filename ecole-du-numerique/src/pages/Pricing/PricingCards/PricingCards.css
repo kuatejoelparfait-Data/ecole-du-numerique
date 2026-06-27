@@ -79,7 +79,13 @@
   .pricing-block__note       { grid-area: note; }
   .pricing-block__cta        { grid-area: cta; }
   .pricing-row               { grid-area: prices; align-self: center; }
-  .pricing-surmesure         { grid-column: 1 / -1; }
+  /* Sur mesure : pas de colonne de prix, on repasse en 1 colonne */
+  #sur-mesure {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  #sur-mesure .pricing-surmesure { grid-column: unset; }
 }
 
 .pricing-block--dark  { background: var(--dark); border-color: var(--dark); }
