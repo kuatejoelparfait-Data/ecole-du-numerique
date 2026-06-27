@@ -79,13 +79,18 @@
   .pricing-block__note       { grid-area: note; }
   .pricing-block__cta        { grid-area: cta; }
   .pricing-row               { grid-area: prices; align-self: center; }
-  /* Sur mesure : pas de colonne de prix, on repasse en 1 colonne */
+  /* Sur mesure : pas de colonne prix, tout en flex colonne */
   #sur-mesure {
-    grid-template-columns: 1fr;
-    grid-template-areas: none;
+    display: flex;
+    flex-direction: column;
   }
 
-  #sur-mesure .pricing-surmesure { grid-column: unset; }
+  #sur-mesure .pricing-block__header,
+  #sur-mesure .pricing-surmesure,
+  #sur-mesure .pricing-block__note,
+  #sur-mesure .pricing-block__cta {
+    grid-area: unset;
+  }
 }
 
 .pricing-block--dark  { background: var(--dark); border-color: var(--dark); }
