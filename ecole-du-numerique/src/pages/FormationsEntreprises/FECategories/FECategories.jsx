@@ -205,8 +205,8 @@ export default function FECategories() {
           </p>
         </div>
 
-        {/* Onglets */}
-        <div className="fe-categories__tabs">
+        {/* Onglets — desktop */}
+        <div className="fe-categories__tabs--desktop">
           {categoryMeta.map(cat => (
             <button
               key={cat.id}
@@ -218,6 +218,19 @@ export default function FECategories() {
               <span>{cat.label}</span>
             </button>
           ))}
+        </div>
+
+        {/* Onglets — mobile (select) */}
+        <div className="fe-categories__tabs--mobile">
+          <select
+            className="fe-categories__select"
+            value={active}
+            onChange={e => handleTabChange(e.target.value)}
+          >
+            {categoryMeta.map(cat => (
+              <option key={cat.id} value={cat.id}>{cat.label}</option>
+            ))}
+          </select>
         </div>
 
         {/* Vue groupes */}

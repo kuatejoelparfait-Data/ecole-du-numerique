@@ -59,7 +59,8 @@ export default function FPCategories() {
           </p>
         </div>
 
-        <div className="fp-categories__tabs">
+        {/* Onglets — desktop */}
+        <div className="fp-categories__tabs--desktop">
           {categoryMeta.map(cat => (
             <button
               key={cat.id}
@@ -71,6 +72,19 @@ export default function FPCategories() {
               <span>{cat.label}</span>
             </button>
           ))}
+        </div>
+
+        {/* Onglets — mobile (select) */}
+        <div className="fp-categories__tabs--mobile">
+          <select
+            className="fp-categories__select"
+            value={active}
+            onChange={e => { sessionStorage.setItem('fp-tab', e.target.value); setActive(e.target.value) }}
+          >
+            {categoryMeta.map(cat => (
+              <option key={cat.id} value={cat.id}>{cat.label}</option>
+            ))}
+          </select>
         </div>
 
         <div className="fp-categories__grid">

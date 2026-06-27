@@ -34,6 +34,7 @@ export default function Navbar() {
               key={link.href}
               to={link.href}
               className={({ isActive }) => `navbar__link${isActive ? ' navbar__link--active' : ''}`}
+              onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </NavLink>
