@@ -45,6 +45,118 @@
   display: block;
 }
 
+/* ── Barre de recherche ──────────────────── */
+.fp-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 99px;
+  padding: 0 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 8px;
+}
+
+.fp-search:focus-within {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px var(--purple-glow);
+}
+
+.fp-search__icon {
+  color: var(--text-muted);
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.fp-search__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text);
+  background: transparent;
+  padding: 14px 0;
+}
+
+.fp-search__input::placeholder { color: var(--text-muted); }
+.fp-search__input::-webkit-search-cancel-button { display: none; }
+
+.fp-search__clear {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.fp-search__clear:hover { background: var(--gray-light); color: var(--text); }
+
+.fp-search__count {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.fp-search__empty {
+  text-align: center;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fp-search__empty-icon {
+  font-size: 48px;
+  color: var(--border);
+}
+
+.fp-search__empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.fp-search__empty-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.fp-search__empty-btn {
+  margin-top: 8px;
+  background: var(--purple);
+  color: var(--white);
+  border: none;
+  border-radius: 99px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fp-search__empty-btn:hover { background: var(--purple-light); }
+
+.fp-categories__card-cat {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 4px;
+  display: block;
+}
+
 /* ── Dropdown mobile avec icônes ─────────── */
 .fp-dropdown {
   position: relative;

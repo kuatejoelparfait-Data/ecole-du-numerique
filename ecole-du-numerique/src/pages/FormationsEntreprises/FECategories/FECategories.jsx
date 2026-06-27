@@ -188,6 +188,20 @@ export default function FECategories() {
     try { return JSON.parse(sessionStorage.getItem('fe-subgroups')) || {} }
     catch { return {} }
   })
+  const [query, setQuery] = useState('')
+
+  const isSearching = query.trim().length > 0
+  const needle = query.toLowerCase()
+
+  const searchResults = isSearching
+    ? formationsEntreprises.filter(f =>
+        f.title.toLowerCase().includes(needle) ||
+        (f.desc || '').toLowerCase().includes(needle) ||
+        f.category.toLowerCase().includes(needle) ||
+        (f.group || '').toLowerCase().includes(needle) ||
+        (f.subgroup || '').toLowerCase().includes(needle)
+      )
+    : null
 
   const tabFormations = formationsEntreprises.filter(f => f.category === active)
 
@@ -244,6 +258,63 @@ export default function FECategories() {
           </p>
         </div>
 
+        {/* Barre de recherche */}
+        <div className="fe-search">
+          <span className="material-symbols-rounded fe-search__icon">search</span>
+          <input
+            type="search"
+            className="fe-search__input"
+            placeholder="Rechercher une formation (ex : Cybersécurité, Python, IA…)"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
+          {isSearching && (
+            <button className="fe-search__clear" onClick={() => setQuery('')} aria-label="Effacer">
+              <span className="material-symbols-rounded">close</span>
+            </button>
+          )}
+        </div>
+
+        {/* Mode recherche */}
+        {isSearching ? (
+          <>
+            <p className="fe-search__count">
+              {searchResults.length} formation{searchResults.length !== 1 ? 's' : ''} trouvée{searchResults.length !== 1 ? 's' : ''} pour «&nbsp;{query}&nbsp;»
+            </p>
+            {searchResults.length > 0 ? (
+              <div className="fe-categories__grid">
+                {searchResults.map(f => (
+                  <div key={f.slug} className="fe-categories__card">
+                    <span className="material-symbols-rounded fe-categories__card-icon">school</span>
+                    <div className="fe-categories__card-body">
+                      <span className="fe-search__card-cat">{f.category}</span>
+                      <p className="fe-categories__card-title">{f.title}</p>
+                      <p className="fe-categories__card-desc">{f.desc}</p>
+                    </div>
+                    {f.duration && (
+                      <div className="fe-categories__card-meta">
+                        <span className="material-symbols-rounded fe-categories__card-meta-icon">schedule</span>
+                        <span>{f.duration}</span>
+                      </div>
+                    )}
+                    <div className="fe-categories__card-footer">
+                      <Link to={`/formations-entreprises/${f.slug}`} className="fe-categories__card-cta fe-categories__card-cta--outline">En savoir plus</Link>
+                      <Link to="/contact" className="fe-categories__card-cta">Demander un devis</Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="fe-search__empty">
+                <span className="material-symbols-rounded fe-search__empty-icon">search_off</span>
+                <p className="fe-search__empty-title">Aucune formation trouvée</p>
+                <p className="fe-search__empty-desc">Essayez d'autres mots-clés ou parcourez nos catégories.</p>
+                <button className="fe-search__empty-btn" onClick={() => setQuery('')}>Voir toutes les formations</button>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
         {/* Onglets — desktop */}
         <div className="fe-categories__tabs--desktop">
           {categoryMeta.map(cat => (
@@ -383,6 +454,8 @@ export default function FECategories() {
             </p>
             <a href="/contact" className="fe-categories__empty-cta">Nous contacter</a>
           </div>
+        )}
+          </>
         )}
 
       </div>

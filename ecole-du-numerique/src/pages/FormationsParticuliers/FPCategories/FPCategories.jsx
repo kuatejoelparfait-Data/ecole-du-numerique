@@ -82,6 +82,19 @@ export default function FPCategories() {
   const [active, setActive] = useState(
     () => sessionStorage.getItem('fp-tab') || categoryMeta[0].id
   )
+  const [query, setQuery] = useState('')
+
+  const isSearching = query.trim().length > 0
+  const needle = query.toLowerCase()
+
+  const searchResults = isSearching
+    ? formations.filter(f =>
+        f.title.toLowerCase().includes(needle) ||
+        f.desc.toLowerCase().includes(needle) ||
+        f.category.toLowerCase().includes(needle) ||
+        (f.level || '').toLowerCase().includes(needle)
+      )
+    : null
 
   const current = formations.filter(f => f.category === active)
 
@@ -98,49 +111,106 @@ export default function FPCategories() {
           </p>
         </div>
 
-        {/* Onglets — desktop */}
-        <div className="fp-categories__tabs--desktop">
-          {categoryMeta.map(cat => (
-            <button
-              key={cat.id}
-              className={`fp-categories__tab${active === cat.id ? ' fp-categories__tab--active' : ''}`}
-              onClick={() => { sessionStorage.setItem('fp-tab', cat.id); setActive(cat.id) }}
-            >
-              <img src={cat.image} alt={cat.label} className="fp-categories__tab-img" loading="lazy" />
-              <span className="material-symbols-rounded fp-categories__tab-icon">{cat.icon}</span>
-              <span>{cat.label}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* Onglets — mobile (dropdown avec icônes) */}
-        <div className="fp-categories__tabs--mobile">
-          <MobileDropdown
-            categories={categoryMeta}
-            active={active}
-            onChange={id => { sessionStorage.setItem('fp-tab', id); setActive(id) }}
+        {/* Barre de recherche */}
+        <div className="fp-search">
+          <span className="material-symbols-rounded fp-search__icon">search</span>
+          <input
+            type="search"
+            className="fp-search__input"
+            placeholder="Rechercher une formation (ex : Python, SEO, Photoshop…)"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
           />
+          {isSearching && (
+            <button className="fp-search__clear" onClick={() => setQuery('')} aria-label="Effacer">
+              <span className="material-symbols-rounded">close</span>
+            </button>
+          )}
         </div>
 
-        <div className="fp-categories__grid">
-          {current.map(formation => (
-            <div key={formation.slug} className="fp-categories__card">
-              <span className="material-symbols-rounded fp-categories__card-icon">{categoryIcon[formation.category]}</span>
-              <div className="fp-categories__card-body">
-                <Link to={`/formations/${formation.slug}`} className="fp-categories__card-title">
-                  {formation.title}
-                </Link>
-                <p className="fp-categories__card-desc">{formation.desc}</p>
+        {/* Mode recherche */}
+        {isSearching ? (
+          <>
+            <p className="fp-search__count">
+              {searchResults.length} formation{searchResults.length !== 1 ? 's' : ''} trouvée{searchResults.length !== 1 ? 's' : ''} pour «&nbsp;{query}&nbsp;»
+            </p>
+            {searchResults.length > 0 ? (
+              <div className="fp-categories__grid">
+                {searchResults.map(formation => (
+                  <div key={formation.slug} className="fp-categories__card">
+                    <span className="material-symbols-rounded fp-categories__card-icon">{categoryIcon[formation.category]}</span>
+                    <div className="fp-categories__card-body">
+                      <span className="fp-categories__card-cat">{formation.category}</span>
+                      <Link to={`/formations/${formation.slug}`} className="fp-categories__card-title">
+                        {formation.title}
+                      </Link>
+                      <p className="fp-categories__card-desc">{formation.desc}</p>
+                    </div>
+                    <div className="fp-categories__card-footer">
+                      <span className="fp-categories__card-level">{formation.level}</span>
+                      <Link to={`/formations/${formation.slug}`} className="fp-categories__card-cta">
+                        En savoir plus
+                      </Link>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="fp-categories__card-footer">
-                <span className="fp-categories__card-level">{formation.level}</span>
-                <Link to={`/formations/${formation.slug}`} className="fp-categories__card-cta">
-                  En savoir plus
-                </Link>
+            ) : (
+              <div className="fp-search__empty">
+                <span className="material-symbols-rounded fp-search__empty-icon">search_off</span>
+                <p className="fp-search__empty-title">Aucune formation trouvée</p>
+                <p className="fp-search__empty-desc">Essayez d'autres mots-clés ou parcourez nos catégories.</p>
+                <button className="fp-search__empty-btn" onClick={() => setQuery('')}>Voir toutes les formations</button>
               </div>
+            )}
+          </>
+        ) : (
+          <>
+            {/* Onglets — desktop */}
+            <div className="fp-categories__tabs--desktop">
+              {categoryMeta.map(cat => (
+                <button
+                  key={cat.id}
+                  className={`fp-categories__tab${active === cat.id ? ' fp-categories__tab--active' : ''}`}
+                  onClick={() => { sessionStorage.setItem('fp-tab', cat.id); setActive(cat.id) }}
+                >
+                  <img src={cat.image} alt={cat.label} className="fp-categories__tab-img" loading="lazy" />
+                  <span className="material-symbols-rounded fp-categories__tab-icon">{cat.icon}</span>
+                  <span>{cat.label}</span>
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
+
+            {/* Onglets — mobile (dropdown avec icônes) */}
+            <div className="fp-categories__tabs--mobile">
+              <MobileDropdown
+                categories={categoryMeta}
+                active={active}
+                onChange={id => { sessionStorage.setItem('fp-tab', id); setActive(id) }}
+              />
+            </div>
+
+            <div className="fp-categories__grid">
+              {current.map(formation => (
+                <div key={formation.slug} className="fp-categories__card">
+                  <span className="material-symbols-rounded fp-categories__card-icon">{categoryIcon[formation.category]}</span>
+                  <div className="fp-categories__card-body">
+                    <Link to={`/formations/${formation.slug}`} className="fp-categories__card-title">
+                      {formation.title}
+                    </Link>
+                    <p className="fp-categories__card-desc">{formation.desc}</p>
+                  </div>
+                  <div className="fp-categories__card-footer">
+                    <span className="fp-categories__card-level">{formation.level}</span>
+                    <Link to={`/formations/${formation.slug}`} className="fp-categories__card-cta">
+                      En savoir plus
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
       </div>
     </section>
