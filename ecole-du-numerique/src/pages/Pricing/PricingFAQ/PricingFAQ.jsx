@@ -3,16 +3,24 @@ import './PricingFAQ.css'
 
 const faqs = [
   {
-    question: "Que signifie « / mois · contrat annuel » ?",
-    answer: "Les tarifs affichés correspondent au prix mensuel dans le cadre d'un engagement annuel. La facturation peut s'effectuer mensuellement ou annuellement selon votre préférence. Un contrat annuel vous garantit un tarif fixe sur 12 mois sans surprise.",
+    question: "Quelle est la différence entre « Formation à l'unité » et « Pack 2 / mois » ?",
+    answer: "La formation à l'unité vous donne accès à une seule formation de votre choix : 400 € pour les particuliers, 600 € par groupe pour les entreprises. Le Pack 2 / mois vous permet de suivre 2 formations par mois avec une réduction de 10 % : 720 €/mois pour les particuliers (au lieu de 800 €) et 1 080 €/mois pour les entreprises (au lieu de 1 200 €).",
   },
   {
-    question: "Comment sont calculés vos tarifs ?",
-    answer: "Les tarifs affichés sont des prix de départ. Le coût final dépend de la formation choisie, de sa durée et du nombre de participants. Contactez-nous pour recevoir un devis personnalisé sous 48h.",
+    question: "Comment est calculée la réduction de 10 % sur le Pack ?",
+    answer: "Le pack regroupe 2 formations par mois. Le tarif de base serait de 2 × 400 € = 800 € pour les particuliers et 2 × 600 € = 1 200 € pour les entreprises. Avec la réduction de 10 %, vous payez respectivement 720 € et 1 080 € par mois, soit une économie de 80 € ou 120 € chaque mois.",
+  },
+  {
+    question: "Qu'est-ce que le « minimum de participants » pour les entreprises ?",
+    answer: "Les formations entreprises sont organisées en sessions de groupe avec un minimum de 5 participants par session. Ce format permet des échanges riches entre participants et une dynamique d'apprentissage collectif. Pour des effectifs plus importants ou des formats différents, contactez-nous pour un devis sur mesure.",
+  },
+  {
+    question: "Puis-je choisir librement les formations dans un Pack ?",
+    answer: "Oui, vous choisissez librement les formations dans notre catalogue chaque mois. Les formations peuvent être sélectionnées dans des domaines différents selon vos besoins du moment : IA, développement web, marketing, design, etc.",
   },
   {
     question: "Puis-je bénéficier d'un financement ?",
-    answer: "Oui, selon votre profil et votre région, jusqu'à 80% des frais peuvent être pris en charge. Les dispositifs Bruxelles-Formation et Chèques-Formation sont notamment disponibles. Contactez-nous pour vérifier votre éligibilité gratuitement.",
+    answer: "Oui, selon votre profil et votre pays, une partie ou la totalité des frais peut être prise en charge par des dispositifs publics. Contactez-nous pour vérifier votre éligibilité gratuitement — nous vous accompagnons dans les démarches.",
   },
   {
     question: "Y a-t-il des frais cachés ?",
@@ -20,15 +28,11 @@ const faqs = [
   },
   {
     question: "Comment obtenir un devis pour mon entreprise ?",
-    answer: "Remplissez notre formulaire de contact en précisant vos besoins (nombre de participants, thématiques, format souhaité). Nous vous revenons sous 48h avec une proposition adaptée à votre organisation.",
-  },
-  {
-    question: "Quelle est la politique d'annulation ?",
-    answer: "Toute annulation doit être notifiée au moins 7 jours ouvrables avant la date de début. Passé ce délai, un report de session peut être proposé selon les disponibilités.",
+    answer: "Remplissez notre formulaire de contact en précisant vos besoins (nombre de participants, thématiques souhaitées, format). Nous vous revenons sous 48h avec une proposition adaptée à votre organisation.",
   },
   {
     question: "Les attestations sont-elles reconnues ?",
-    answer: "Oui, une attestation de formation officielle vous est remise à l'issue de chaque parcours. Elle peut être valorisée auprès d'employeurs ou dans le cadre d'une reconversion professionnelle.",
+    answer: "Oui, une attestation de formation officielle est remise à chaque participant à l'issue de chaque parcours. Elle peut être valorisée auprès d'employeurs ou dans le cadre d'une reconversion professionnelle.",
   },
 ]
 
