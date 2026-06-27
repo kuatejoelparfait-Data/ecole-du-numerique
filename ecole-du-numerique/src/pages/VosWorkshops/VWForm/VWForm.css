@@ -197,3 +197,10 @@
   max-width: 440px;
   line-height: 1.6;
 }
+
+@media (max-width: 640px) {
+  .vw-form__tally-mask {
+    width: 160px;
+    height: 48px;
+  }
+}

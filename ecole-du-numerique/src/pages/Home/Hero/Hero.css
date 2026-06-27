@@ -27,6 +27,12 @@
   gap: 48px;
 }
 
+/* Mobile : texte en premier, image en second */
+@media (max-width: 767px) {
+  .hero__content { order: 1; }
+  .hero__visual   { order: 2; }
+}
+
 /* ── Colonne gauche : texte ─────────────── */
 .hero__content {
   display: flex;
@@ -140,7 +146,6 @@
 .hero__visual {
   display: flex;
   justify-content: center;
-  order: -1;
 }
 
 .hero__image-wrapper {
@@ -201,9 +206,8 @@
     font-size: clamp(28px, 4vw, 52px);
   }
 
-  .hero__visual {
-    order: 0;
-  }
+  .hero__content { order: 1; }
+  .hero__visual   { order: 2; }
 
   .hero__badge {
     font-size: 13px;

@@ -173,3 +173,10 @@
     padding: 96px 24px;
   }
 }
+
+@media (max-width: 640px) {
+  .partenaires-form__tally-mask {
+    width: 160px;
+    height: 48px;
+  }
+}

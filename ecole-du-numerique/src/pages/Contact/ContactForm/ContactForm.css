@@ -236,3 +236,10 @@
     gap: 64px;
   }
 }
+
+@media (max-width: 640px) {
+  .contact__tally-mask {
+    width: 160px;
+    height: 48px;
+  }
+}
