@@ -210,7 +210,7 @@ export default function PricingCards() {
                 </p>
                 <div className="pricing-abo-section__disclaimer">
                   <span className="material-symbols-rounded">info</span>
-                  Les abonnements <strong>ne remplacent pas</strong> les formations inter ou intra-entreprise. Ils permettent un accompagnement continu entre les sessions.
+                  Les abonnements complètent les formations — ils ne les remplacent pas.
                 </div>
               </div>
               <AboGrid plans={abonnementsEntr} />
