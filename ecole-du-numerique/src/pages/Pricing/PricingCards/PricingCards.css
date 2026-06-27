@@ -57,9 +57,29 @@
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 40px 36px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 28px;
+}
+
+@media (min-width: 860px) {
+  .pricing-block {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header      prices"
+      "conditions  prices"
+      "note        prices"
+      "cta         prices";
+    align-items: start;
+    column-gap: 48px;
+  }
+
+  .pricing-block__header     { grid-area: header; }
+  .pricing-block__conditions { grid-area: conditions; }
+  .pricing-block__note       { grid-area: note; }
+  .pricing-block__cta        { grid-area: cta; }
+  .pricing-row               { grid-area: prices; align-self: center; }
+  .pricing-surmesure         { grid-column: 1 / -1; }
 }
 
 .pricing-block--dark  { background: var(--dark); border-color: var(--dark); }
@@ -432,8 +452,9 @@
 .pricing-abo-section__disclaimer {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
   font-size: 13px;
+  line-height: 1.6;
   color: var(--text-muted);
   background: #fff8e1;
   border: 1.5px solid #f9c74f;
@@ -443,11 +464,22 @@
   text-align: left;
 }
 
+.pricing-abo-section__disclaimer p {
+  margin: 0;
+  display: inline;
+}
+
+.pricing-abo-section__disclaimer strong {
+  display: inline;
+  font-weight: 700;
+  color: var(--dark);
+}
+
 .pricing-abo-section__disclaimer .material-symbols-rounded {
   font-size: 16px;
   color: #e5a000;
   flex-shrink: 0;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .pricing-abo-section__toggle {
