@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { formations } from '../../../data/formationsParticuliers'
 import './FPCategories.css'
@@ -39,6 +39,45 @@ const categoryImages = {
   ],
 }
 
+function MobileDropdown({ categories, active, onChange }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+  const activeCat = categories.find(c => c.id === active)
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  return (
+    <div className="fp-dropdown" ref={ref}>
+      <button className="fp-dropdown__trigger" onClick={() => setOpen(!open)}>
+        <span className="material-symbols-rounded fp-dropdown__trigger-icon">{activeCat?.icon}</span>
+        <span className="fp-dropdown__trigger-label">{activeCat?.label}</span>
+        <span className="material-symbols-rounded fp-dropdown__chevron">{open ? 'expand_less' : 'expand_more'}</span>
+      </button>
+      {open && (
+        <ul className="fp-dropdown__list">
+          {categories.map(cat => (
+            <li key={cat.id}>
+              <button
+                className={`fp-dropdown__item${active === cat.id ? ' fp-dropdown__item--active' : ''}`}
+                onClick={() => { onChange(cat.id); setOpen(false) }}
+              >
+                <span className="material-symbols-rounded fp-dropdown__item-icon">{cat.icon}</span>
+                <span>{cat.label}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 export default function FPCategories() {
   const [active, setActive] = useState(
     () => sessionStorage.getItem('fp-tab') || categoryMeta[0].id
@@ -74,17 +113,13 @@ export default function FPCategories() {
           ))}
         </div>
 
-        {/* Onglets — mobile (select) */}
+        {/* Onglets — mobile (dropdown avec icônes) */}
         <div className="fp-categories__tabs--mobile">
-          <select
-            className="fp-categories__select"
-            value={active}
-            onChange={e => { sessionStorage.setItem('fp-tab', e.target.value); setActive(e.target.value) }}
-          >
-            {categoryMeta.map(cat => (
-              <option key={cat.id} value={cat.id}>{cat.label}</option>
-            ))}
-          </select>
+          <MobileDropdown
+            categories={categoryMeta}
+            active={active}
+            onChange={id => { sessionStorage.setItem('fp-tab', id); setActive(id) }}
+          />
         </div>
 
         <div className="fp-categories__grid">

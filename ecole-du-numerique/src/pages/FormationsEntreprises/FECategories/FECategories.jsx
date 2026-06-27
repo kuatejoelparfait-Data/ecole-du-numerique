@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { formationsEntreprises } from '../../../data/formationsEntreprises'
 import './FECategories.css'
@@ -138,6 +138,45 @@ const tabGroups = {
   ],
 }
 
+function MobileDropdown({ categories, active, onChange }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+  const activeCat = categories.find(c => c.id === active)
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  return (
+    <div className="fe-dropdown" ref={ref}>
+      <button className="fe-dropdown__trigger" onClick={() => setOpen(!open)}>
+        <span className="material-symbols-rounded fe-dropdown__trigger-icon">{activeCat?.icon}</span>
+        <span className="fe-dropdown__trigger-label">{activeCat?.label}</span>
+        <span className="material-symbols-rounded fe-dropdown__chevron">{open ? 'expand_less' : 'expand_more'}</span>
+      </button>
+      {open && (
+        <ul className="fe-dropdown__list">
+          {categories.map(cat => (
+            <li key={cat.id}>
+              <button
+                className={`fe-dropdown__item${active === cat.id ? ' fe-dropdown__item--active' : ''}`}
+                onClick={() => { onChange(cat.id); setOpen(false) }}
+              >
+                <span className="material-symbols-rounded fe-dropdown__item-icon">{cat.icon}</span>
+                <span>{cat.label}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 export default function FECategories() {
   const [active, setActive] = useState(
     () => sessionStorage.getItem('fe-tab') || categoryMeta[0].id
@@ -220,17 +259,13 @@ export default function FECategories() {
           ))}
         </div>
 
-        {/* Onglets — mobile (select) */}
+        {/* Onglets — mobile (dropdown avec icônes) */}
         <div className="fe-categories__tabs--mobile">
-          <select
-            className="fe-categories__select"
-            value={active}
-            onChange={e => handleTabChange(e.target.value)}
-          >
-            {categoryMeta.map(cat => (
-              <option key={cat.id} value={cat.id}>{cat.label}</option>
-            ))}
-          </select>
+          <MobileDropdown
+            categories={categoryMeta}
+            active={active}
+            onChange={handleTabChange}
+          />
         </div>
 
         {/* Vue groupes */}
