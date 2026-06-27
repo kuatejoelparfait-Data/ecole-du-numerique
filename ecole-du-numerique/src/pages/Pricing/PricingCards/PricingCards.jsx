@@ -142,7 +142,7 @@ export default function PricingCards() {
                 </p>
                 <div className="pricing-abo-section__disclaimer">
                   <span className="material-symbols-rounded">info</span>
-                  Les abonnements <strong>ne remplacent pas</strong> les formations complètes de 2 jours. Ils s'y ajoutent pour maintenir une progression régulière.
+                  Les abonnements complètent les formations — ils ne les remplacent pas.
                 </div>
               </div>
               <AboGrid plans={abonnementsPart} />
